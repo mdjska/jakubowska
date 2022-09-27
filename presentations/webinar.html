@@ -1,0 +1,1373 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Digitale_EPD'er</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-auto-animate>
+                <h2 data-id="title1">Digitale miljøvaredeklarationer og APIer</h2>
+            </section>
+            <section data-auto-animate>
+                <h2 style="text-align:center; font-size: medium; color:darkgray;" data-id="title1">
+                    Digitale miljøvaredeklarationer og APIer</h2>
+
+                <p style="text-align:left;" class="fragment fade-right">
+                    ➡ Gennemgang af udvalgte EPD-udbydere
+                </p>
+                <p style="text-align:left;" class="fragment fade-right">
+                    ➡ Kort om EPD'er på digital format
+                </p>
+                <p style="text-align:left;" class="fragment fade-right">
+                    ➡ Søgning på ECO Portal
+                </p>
+                <p style="text-align:left; margin-right: -100px;" class="fragment fade-right">
+                    ➡ Hvordan er en EPD struktureret i ILCD+EPD-formatet?
+                </p>
+                <p style="text-align:left;" class="fragment fade-right">
+                    ➡ Hvordan læser man den rå XML data?
+                </p>
+                <p style="text-align:left;" class="fragment fade-right">
+                    ➡ Hvordan får man adgang til ECO Portals API?
+                </p>
+                <p style="text-align:left;" class="fragment fade-right">
+                    ➡ Demo af et Python script
+                </p>
+
+            </section>
+
+            <section data-auto-animate data-background-color="#FFF">
+
+                <h3 style="padding-bottom: 70px;">Forskellige EPD-aktører</h3>
+                <div style="text-align: center; float: left;">
+                    <img src="./images/eco-platform.svg" alt="" border='0' height='70'
+                        style="vertical-align:middle;margin:0px 20px">
+                    <img src="./images/okobaudat2.jpeg" alt="ÖKOBAUDAT" border='0' height='70'
+                        style="vertical-align:middle;margin:0px 20px">
+                    <img src="./images/epdlogo_tranparent.png" alt="" border='0' height='50'
+                        style="vertical-align:middle;margin:0px 30px">
+                    <img src="./images/IBU_logo.png" alt="" border='0' height='100'
+                        style="vertical-align:middle;margin:10px 20px">
+                    <img src="./images/indata_nt.jpeg" alt="" border='0' height='80'
+                        style="vertical-align:middle;margin:0px 10px">
+                    <img src="./images/OCL.png" alt="" border='0' height='70'
+                        style="vertical-align:middle;margin:0px 20px">
+                    <img src="./images/ICE.png" alt="" border='0' height='90'
+                        style="vertical-align:middle;margin:10px 20px">
+
+                    <img src="./images/inies.png" alt="" border='0' height='90'
+                        style="vertical-align:middle;margin:10px 5px">
+                    <img src="./images/B-EPD-logo.png" alt="" border='0' height='70'
+                        style="vertical-align:middle;margin:10px 20px">
+
+                    <img src="./images/eLCA.png" alt="" border='0' height='70'
+                        style="vertical-align:middle;margin:20px 30px">
+                    <img src="./images/totem_logo.png" alt="" border='0' height='60'
+                        style="vertical-align:middle;margin:10px 20px">
+                    <img src="./images/lcadatabasecom.png" alt="" border='0' height='60'
+                        style="vertical-align:middle;margin:10px 3px">
+                    <img src="./images/environdec_logo_black.png" alt="" border='0' height='60'
+                        style="vertical-align:middle;margin:10px 20px">
+
+
+                </div>
+            </section>
+
+            <section data-auto-animate data-background-color="#FFF">
+                <h3 style="text-align:center; font-size: smaller; color:darkgray; padding-bottom: 50pt;"> Forskellige
+                    EPD-aktører</h3>
+                <table style="margin-left: -150px; margin-right: -150px; ">
+                    <thead>
+                        <tr>
+                            <th style="vertical-align:middle;text-align: center;">Nationale udbydere</th>
+                            <th style="vertical-align:middle;padding-left: 30px; padding-right: 30px;">Søgeplatforme
+                            </th>
+                            <th style="text-align: center;padding-left: 30px; padding-right: 30px;">Udbydere af
+                                original
+                                <br>generisk data
+                            </th>
+                            <th style="vertical-align:middle;text-align: center;">Integrerede<br>værktøjer</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="vertical-align:middle;padding-left: 50px; padding-right: 30px;"><img
+                                    src="./images/environdec_logo_black.png" alt="" border='0' height='50'><br>
+                                <img src="./images/inies.png" alt="" border='0' height='60'
+                                    style="vertical-align:middle;margin:10px 20px">
+                                <img src="./images/B-EPD-logo.png" alt="" border='0' height='60'
+                                    style="vertical-align:middle;margin:10px 20px">
+                                <img src="./images/IBU_logo.png" alt="" border='0' height='60'
+                                    style="vertical-align:middle;margin:10px 20px"><br>
+                                <img src="./images/epdlogo_tranparent.png" alt="" border='0' height='40'>
+                            </td>
+                            <td style="vertical-align:middle;padding-left: 50px; padding-right: 80px;">
+                                <img src="./images/eco-platform.svg" alt="" border='0' height='60'> <br>
+                                <img src="./images/indata_nt.jpeg" alt="" border='0' height='60'> <br>
+                                <img src="./images/lcadatabasecom.png" alt="" border='0' height='50'>
+                            </td>
+                            <td style="vertical-align:middle;padding-left: 80px; padding-right: 80px;">
+                                <img src="./images/okobaudat2.jpeg" alt="ÖKOBAUDAT" border='0' height='60'> <br>
+                                <img src="./images/ICE.png" alt="" border='0' height='60'>
+                            </td>
+                            <td style="vertical-align:middle;padding-left: 70px; padding-right: 50px;"><img
+                                    src="./images/OCL.png" alt="" border='0' height='60'> <br>
+                                <img src="./images/eLCA.png" alt="" border='0' height='60'> <br>
+                                <img src="./images/totem_logo.png" alt="" border='0' height='50'>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+            <section data-markdown>
+                <script type="text/template">
+						## Hvordan ser en EPD i digital format ud?
+
+						*Hvad skal man være ekstra opmærksom på?*
+					</script>
+            </section>
+            <section
+                data-background-iframe="https://epdnorway.lca-data.com/datasetdetail/process.xhtml?uuid=58871b96-bcdf-4438-b82f-d100c1df1fe5&version=00.03.000&stock=PUBLIC&lang=en"
+                data-background-interactive>
+                <div class="fragment fade-out"
+                    style="vertical-align:middle;position: absolute; width: 40%; right: -150px; top:-200px ; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0, 0, 0, 0.108); background-color: rgba(0, 0, 0, 0.691); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+                    <h3 style="color:#fff">Eksempel-EPD i HTML-formatet</h3>
+                    <p>Navn: "ABT Skanska Grön AsfaltBio Zero" <br>Udbyder: EPD-Norge</p>
+                </div>
+            </section>
+            <section>
+                <section data-auto-animate>
+                    <h2>Digitale EPD-formater</h2>
+                </section>
+
+                <section data-auto-animate data-background-color="#FFF">
+                    <h2>ILCD og ILCD+EPD</h2>
+                    <img src="./images/ilcd_epd2.png" height="300">
+                </section>
+                <section data-auto-animate data-background-color="#FFF">
+                    <h2>ILCD og ILCD+EPD</h2>
+                    <img src="./images/ilcd_folder.png" alt="" border='0' style="vertical-align:middle;float:left">
+                    <img src="./images/zip.webp" alt="" border='0' height="130"
+                        style="vertical-align:middle;float:none; padding-left: 100px; padding-top: 100px;transform:rotate(7deg)">
+                </section>
+
+                <section>
+                    <h2>
+                        Andre EPD-formater:
+                    </h2>
+                    <p style="text-align:center;" class="fragment">
+                        HTML
+                    </p>
+                    <p style="text-align:center;" class="fragment">
+                        XML
+                    </p>
+                    <p style="text-align:center;" class="fragment">
+                        CSV
+                    </p>
+                    <p style="text-align:center;" class="fragment">
+                        JSON
+                    </p>
+
+                </section>
+
+            </section>
+            <section
+                data-background-iframe="file:///Users/martina/Documents/ContechLabEPDProject/presentations/index_tabel.html"
+                data-background-interactive data-background-color="#FFF">
+                <div class="fragment fade-out"
+                    style="vertical-align:middle;  width: 90%; margin-right:auto; margin-left:auto; margin-top: -200px; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0, 0, 0, 0.108); background-color: rgba(0, 0, 0, 0.691); color: #fff; padding: 20px; font-size: smaller; ">
+                    <h3 style="color:#fff">Oversigt over udvalgte EPD-udbydere</h3>
+                    <p><em>Klik på en række for at se flere detaljer</em></p>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Søgning på ECO Portal
+                </h2>
+            </section>
+
+            <section
+                data-background-video="/Users/martina/Documents/ContechLabEPDProject/Video1/Screenrecordings/eco_portal_retina.mov"
+                data-background-video-muted>
+            </section>
+
+
+            <section>
+
+            </section>
+            <section data-auto-animate>
+                <h2 data-id="title1">Hvordan bruger man en API til at finde digitale miljøvaredata?</h2>
+
+
+            </section>
+
+            <section data-auto-animate>
+                <h2 data-id="title2">Forudsætninger</h2>
+            </section>
+            <section data-auto-animate>
+                <h2 data-id="title2">
+                    Forudsætninger</h2>
+                <img src="./images/Python_logo.png" alt="" border='0' height="180"
+                    style="vertical-align:middle;padding-top: 100px;padding-right: 50px; margin-left: -40px;">
+                <img src="./images/vscode.png" alt="" border='0' height="150"
+                    style="vertical-align:middle; padding-left: 50px; padding-top: 100px;transform:rotate(7deg)">
+
+            </section>
+            <section>
+
+                <section data-auto-animate>
+                    <h2>EDP i ILCD+EPD</h2>
+
+                </section>
+                <section data-auto-animate data-background-color="#FFF">
+                    <h2>EDP i ILCD+EPD</h2>
+                    <img src="./images/ilcd_folder.png" alt="" border='0' style="vertical-align:middle;">
+                    <img src="./images/zip.webp" alt="" border='0' height="130"
+                        style="vertical-align:middle;float:none; padding-left: 100px; padding-top: 100px;transform:rotate(7deg)">
+                </section>
+                <section data-auto-animate data-background-color="#FFF">
+                    <h2>EDP i ILCD+EPD</h2>
+                    <img src="./images/ilcd_datatypes.png" alt="" border='0' style="vertical-align:middle;" width="55%">
+                    <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">ILCD+EPD Data
+                        Format Primer
+                        Author: Oliver Kusche | ok*worx</span>
+
+                </section>
+                <section data-auto-animate data-background-color="#FFF">
+                    <h2>EDP i ILCD+EPD</h2>
+                    <img src="./images/diagram1.png" alt="" border='0' style="vertical-align:middle; " width="80%">
+                    <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">ILCD+EPD Data
+                        Format Primer
+                        Author: Oliver Kusche | ok*worx</span>
+
+                </section>
+                <section data-auto-animate data-background-color="#FFF">
+                    <h2>EDP i ILCD+EPD</h2>
+                    <img src="./images/process_flows.png" alt="" border='0' style="vertical-align:middle;" width="80%">
+                    <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">ILCD+EPD Data
+                        Format Primer
+                        Author: Oliver Kusche | ok*worx</span>
+
+                </section>
+                <section data-auto-animate data-background-color="#FFF">
+                    <h2>EDP i ILCD+EPD</h2>
+                    <img src="./images/diagram2.png" alt="" border='0' style="vertical-align:middle;" width="80%">
+                    <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">ILCD+EPD Data
+                        Format Primer
+                        Author: Oliver Kusche | ok*worx</span>
+
+                </section>
+
+                <section data-auto-animate data-background-color="#FFF">
+                    <h2>EDP i ILCD+EPD</h2>
+                    <img src="./images/flowproperties.png" alt="" border='0' style="vertical-align:middle;" width="80%">
+                    <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">ILCD+EPD Data
+                        Format Primer
+                        Author: Oliver Kusche | ok*worx</span>
+
+                </section>
+
+                <section data-auto-animate data-background-color="#FFF">
+                    <h2>EDP i ILCD+EPD</h2>
+                    <img src="./images/info_splitting2.png" alt="" border='0' style="vertical-align:middle;"
+                        width="80%">
+                    <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">ILCD+EPD Data
+                        Format Primer
+                        Author: Oliver Kusche | ok*worx</span>
+
+                </section>
+                <section data-auto-animate data-background-color="#FFF">
+                    <h2>EDP i ILCD+EPD</h2>
+                    <img src="./images/uuid2.png" alt="" border='0' style="vertical-align:middle;float:left"
+                        width="90%">
+                    <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">ILCD+EPD Data
+                        Format Primer
+                        Author: Oliver Kusche | ok*worx</span>
+                </section>
+                <section data-background-image="./images/eu_kommissionen.png" data-background-color="#FFF">
+                    <div
+                        style="position: absolute; width: 50%; right: 0; margin-right: -120px; margin-top: -190px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.412), 0 5px 25px rgba(0, 0, 0, 0.088); background-color: rgba(0, 0, 0, 0.785); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+                        <h3 style="color:#fff">Mere information om ILCD-formatet
+                            og andre nyttige links på EU-kommissionens hjemmeside</h3>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2 data-auto-animate>
+                        Hvordan ser den rå XML-data ud?
+                    </h2>
+                </section>
+                <section data-auto-animate>
+                    <h2 style="font-size: 45px;">
+                        Hvordan ser den rå XML-data ud?
+                    </h2>
+                    <h6 style="color: gray;">
+                        Opfriskning
+                    </h6>
+                    <iframe width="1200px" height="500px" style="position:relative;"
+                        data-src="https://epdnorway.lca-data.com/datasetdetail/process.xhtml?uuid=165f8554-00cd-43ad-aeb7-ba769854554a&version=00.01.000&stock=PUBLIC"
+                        data-preload=""></iframe>
+
+
+                </section>
+                <section data-auto-animate>
+                    <h2 style="font-size: 45px;">
+                        Hvordan ser den rå XML-data ud?
+                    </h2>
+                    <h6 style="color: gray;">
+                        Oversigt
+                    </h6>
+                    <pre style:"font-size: 0.4em"><code data-trim data-noescape data-line-numbers class="language-xml" style:"font-size: 40%"> <script  style:"font-size: 40%" type="text/template">
+						<processDataSet xmlns:m="http://lca.jrc.it/ILCD/LCIAMethod" xmlns:common="http://lca.jrc.it/ILCD/Common" 
+						xmlns:s="http://lca.jrc.it/ILCD/Source" xmlns:c="http://lca.jrc.it/ILCD/Contact" xmlns:f="http://lca.jrc.it/ILCD/Flow" 
+						xmlns="http://lca.jrc.it/ILCD/Process" xmlns:fp="http://lca.jrc.it/ILCD/FlowProperty" 
+						xmlns:u="http://lca.jrc.it/ILCD/UnitGroup" xmlns:ns9="http://www.okworx.com/ILCD/Extensions/2018/Profile" 
+						version="1.1" ns9:profile="EN_15804_EPD_Norway">
+							<processInformation>
+							...
+							</processInformation>
+							<modellingAndValidation>
+							...
+							</modellingAndValidation>
+							<administrativeInformation>
+							...
+							</administrativeInformation>
+							<exchanges>
+							...
+							</exchanges>
+							<LCIAResults>
+							...
+							</LCIAResults>
+							</processDataSet>
+					</script></code></pre>
+
+                </section>
+                <section data-auto-animate>
+                    <h2 style="font-size: 45px;">
+                        Hvordan ser den rå XML-data ud?
+                    </h2>
+                    <h6 style="color: gray;">
+                        Process information
+                    </h6>
+                    <pre style:"font-size: 0.4em"><code data-trim data-noescape data-line-numbers="1-62|3|4-6|8-15|17-27|29-31|32-37|38-42" class="language-xml" style:"font-size: 40%"> <script  style:"font-size: 40%" type="text/template">
+						<processInformation>
+							<dataSetInformation>
+								<common:UUID>165f8554-00cd-43ad-aeb7-ba769854554a</common:UUID>
+								<name>
+									<baseName xml:lang="en">Gyproc® Normal – Standard Plasterboard</baseName>
+								</name>
+								<classificationInformation>
+									<common:classification name="EPDNorge">
+										<common:class
+												level="0"
+												classId="f0167df9-d436-462f-9969-0234c152f514">Bygg</common:class>
+										<common:class
+												level="1"
+												classId="266c796d-afa0-43b2-828a-19e5696c7076">Bygningsplater</common:class>
+									</common:classification>
+								</classificationInformation>
+								<common:generalComment xml:lang="en">Data quality: Product specific data was
+					collected at the Fredrikstad plant in Norway in 2015. The data has been modelled using the TEAM software.
+					Background data used is from CML 3.9. Ecoinvent v 2.2 data is used having been adapted for use in TEAM by Ecobilan
+					Allocation: The allocation is made ​​in accordance with the provisions of EN 15804. Incoming energy and water and
+					waste production in-house is allocated equally among all products through mass allocation. Effects
+					of primary production of recycled materials allocated to the main product in which the material was
+					used. The recycling process and transportation of the material is allocated to this analysis.
+					Allocation of the impacts of FGD has been done on an economic basis. Cut-off criteria: All major raw materials and all
+					the essential energy is included. The production process for raw materials and energy flows that are
+					included with very small amounts (<\1%) are not included. This cut-off rule does not apply for hazardous 
+					materials and substances. </common:generalComment>
+							</dataSetInformation>
+							<quantitativeReference type="Reference flow(s)">
+								<referenceToReferenceFlow>1</referenceToReferenceFlow>
+							</quantitativeReference>
+							<time>
+								<common:referenceYear>2017</common:referenceYear>
+								<common:dataSetValidUntil>2022</common:dataSetValidUntil>
+								<common:timeRepresentativenessDescription xml:lang="en">24.02.2017 -
+					24.02.2022</common:timeRepresentativenessDescription>
+							</time>
+							<geography>
+								<locationOfOperationSupplyOrProduction location="NO">
+									<descriptionOfRestrictions xml:lang="en">Market: Norway</descriptionOfRestrictions>
+								</locationOfOperationSupplyOrProduction>
+							</geography>
+							<technology>
+								<technologyDescriptionAndIncludedProcesses xml:lang="en">The weight of
+					the declared unit is 9 kg, with a thickness of 12.5 mm For more information from the product data sheet, see
+					www.gyproc.no </technologyDescriptionAndIncludedProcesses>
+								<technologicalApplicability xml:lang="en">Gyproc Normal is a 12,5 mm thick
+					standard plasterboard suitable for most interior building applications where normal levels of fire
+					resistance, structural strength and sound insulation are specified. Gyproc Normal can be use in light weight
+					building systems of 1 – 3 layers on a steel or timber framing. The tapered edge allows the use of joint filler to 
+					produce a durable joint reinforcement and a smooth, continuous, crack-resistant surface ready for priming and
+					final decoration. The smooth surface of the paper lining is an ideal base for decoration with wallpaper or by
+					painting. It is available in 900 mm (GNE 13) and 1200 mm width (GN 13). </technologicalApplicability>
+								<referenceToTechnologyFlowDiagrammOrPicture
+										type="source data set"
+										refObjectId="d8bc6838-1569-414d-b729-e19507155b7d"
+										version="00.00.001">
+									<common:shortDescription xml:lang="en">NEPD-1260-406_Gyproc---Normal-----Standard-Plasterboard
+					flow chart</common:shortDescription>
+								</referenceToTechnologyFlowDiagrammOrPicture>
+							</technology>
+						</processInformation>
+					</script></code></pre>
+
+
+                </section>
+
+                <section data-auto-animate>
+                    <h2 style="font-size: 45px;">
+                        Hvordan ser den rå XML-data ud?
+                    </h2>
+                    <h6 style="color: gray;">
+                        LCIA Results
+                    </h6>
+                    <pre style:"font-size: 0.4em"><code data-trim data-noescape data-line-numbers="1-41|3-9|11-32|18-20|33-39|161-189" class="language-xml" style:"font-size: 40%"> <script  style:"font-size: 40%" type="text/template">
+						<LCIAResults>
+							<LCIAResult>
+								<referenceToLCIAMethodDataSet
+										type="LCIA method data set"
+										refObjectId="f7c73bb9-ab1a-4249-9c6d-379a0de6f67e"
+										uri="../lciamethods/f7c73bb9-ab1a-4249-9c6d-379a0de6f67e">
+									<common:shortDescription xml:lang="en">Abiotic depletion potential for non
+					fossil resources (ADPE)</common:shortDescription>
+								</referenceToLCIAMethodDataSet>
+								<meanAmount>0.0</meanAmount>
+								<common:other>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C3">1.4E-9</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A4">3.3E-11</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A1-A3">4.5E-7</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C1">4.7E-9</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A5">2.9E-8</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C4">0.0</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C2">5.0E-12</epd:amount>
+									<epd:referenceToUnitGroupDataSet
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											refObjectId="54ccd2d9-a32a-4fc2-923d-f2c8c93e89d4"
+											type="unit group data set"
+											uri="../unitgroups/54ccd2d9-a32a-4fc2-923d-f2c8c93e89d4">
+										<common:shortDescription>kg Sb-Äqv.</common:shortDescription>
+									</epd:referenceToUnitGroupDataSet>
+								</common:other>
+							</LCIAResult>
+							<LCIAResult>
+								<referenceToLCIAMethodDataSet
+										type="LCIA method data set"
+										refObjectId="804ebcdf-309d-4098-8ed8-fdaf2f389981"
+										uri="../lciamethods/804ebcdf-309d-4098-8ed8-fdaf2f389981">
+									<common:shortDescription xml:lang="en">Abiotic depletion potential for
+					fossil resources (ADPF)</common:shortDescription>
+								</referenceToLCIAMethodDataSet>
+								<meanAmount>0.0</meanAmount>
+								<common:other>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C3">1.5</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A4">3.6</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A1-A3">34.0</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C1">0.41</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A5">3.7</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C4">0.0</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C2">0.28</epd:amount>
+									<epd:referenceToUnitGroupDataSet
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											refObjectId="93a60a57-a3c8-11da-a746-0800200c9a66"
+											type="unit group data set"
+											uri="../unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66">
+										<common:shortDescription>MJ</common:shortDescription>
+									</epd:referenceToUnitGroupDataSet>
+								</common:other>
+							</LCIAResult>
+							<LCIAResult>
+								<referenceToLCIAMethodDataSet
+										type="LCIA method data set"
+										refObjectId="b4274add-93b7-4905-a5e4-2e878c4e4216"
+										uri="../lciamethods/b4274add-93b7-4905-a5e4-2e878c4e4216">
+									<common:shortDescription xml:lang="en">Acidification potential (AP)</common:shortDescription>
+								</referenceToLCIAMethodDataSet>
+								<meanAmount>0.0</meanAmount>
+								<common:other>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C3">5.0E-4</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A4">0.0032</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A1-A3">0.0032</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C1">2.3E-4</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A5">6.9E-4</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C4">0.0</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C2">1.4E-4</epd:amount>
+									<epd:referenceToUnitGroupDataSet
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											refObjectId="bc50c624-a9bc-45b1-a9b0-e6b10d00476f"
+											type="unit group data set"
+											uri="../unitgroups/bc50c624-a9bc-45b1-a9b0-e6b10d00476f">
+										<common:shortDescription>kg SO2-Äqv.</common:shortDescription>
+									</epd:referenceToUnitGroupDataSet>
+								</common:other>
+							</LCIAResult>
+							<LCIAResult>
+								<referenceToLCIAMethodDataSet
+										type="LCIA method data set"
+										refObjectId="f58827d0-b407-4ec6-be75-8b69efb98a0f"
+										uri="../lciamethods/f58827d0-b407-4ec6-be75-8b69efb98a0f">
+									<common:shortDescription xml:lang="en">Eutrophication potential (EP)</common:shortDescription>
+								</referenceToLCIAMethodDataSet>
+								<meanAmount>0.0</meanAmount>
+								<common:other>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C3">6.0E-5</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A4">2.6E-4</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A1-A3">9.3E-4</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C1">5.3E-5</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A5">1.2E-4</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C4">8.2E-5</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C2">3.4E-5</epd:amount>
+									<epd:referenceToUnitGroupDataSet
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											refObjectId="67b5401d-873c-485f-bcf3-6ae83b918822"
+											type="unit group data set"
+											uri="../unitgroups/67b5401d-873c-485f-bcf3-6ae83b918822">
+										<common:shortDescription>kg Phosphat-Äqv.</common:shortDescription>
+									</epd:referenceToUnitGroupDataSet>
+								</common:other>
+							</LCIAResult>
+							<LCIAResult>
+								<referenceToLCIAMethodDataSet
+										type="LCIA method data set"
+										refObjectId="77e416eb-a363-4258-a04e-171d843a6460"
+										uri="../lciamethods/77e416eb-a363-4258-a04e-171d843a6460">
+									<common:shortDescription xml:lang="en">Global warming potential (GWP)</common:shortDescription>
+								</referenceToLCIAMethodDataSet>
+								<meanAmount>0.0</meanAmount>
+								<common:other>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C3">0.09</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A4">0.29</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A1-A3">1.7</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C1">0.03</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A5">0.19</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C4">0.0</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C2">0.023</epd:amount>
+									<epd:referenceToUnitGroupDataSet
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											refObjectId="1ebf3012-d0db-4de2-aefd-ef30cedb0be1"
+											type="unit group data set"
+											uri="../unitgroups/1ebf3012-d0db-4de2-aefd-ef30cedb0be1">
+										<common:shortDescription>kg CO2-Äqv.</common:shortDescription>
+									</epd:referenceToUnitGroupDataSet>
+								</common:other>
+							</LCIAResult>
+							<LCIAResult>
+								<referenceToLCIAMethodDataSet
+										type="LCIA method data set"
+										refObjectId="06dcd26f-025f-401a-a7c1-5e457eb54637"
+										uri="../lciamethods/06dcd26f-025f-401a-a7c1-5e457eb54637">
+									<common:shortDescription xml:lang="en">Ozone Depletion Potential (ODP)</common:shortDescription>
+								</referenceToLCIAMethodDataSet>
+								<meanAmount>0.0</meanAmount>
+								<common:other>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C3">2.2E-8</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A4">1.1E-7</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A1-A3">5.8E-8</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C1">3.7E-9</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A5">1.7E-8</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C4">0.0</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C2">1.6E-8</epd:amount>
+									<epd:referenceToUnitGroupDataSet
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											refObjectId="88054749-b0a6-47ea-a82b-dc5b29326512"
+											type="unit group data set"
+											uri="../unitgroups/88054749-b0a6-47ea-a82b-dc5b29326512">
+										<common:shortDescription>kg CFC 11 eq.</common:shortDescription>
+									</epd:referenceToUnitGroupDataSet>
+								</common:other>
+							</LCIAResult>
+							<LCIAResult>
+								<referenceToLCIAMethodDataSet
+										type="LCIA method data set"
+										refObjectId="1e84a202-dae6-42aa-9e9d-71ea48b8be00"
+										uri="../lciamethods/1e84a202-dae6-42aa-9e9d-71ea48b8be00">
+									<common:shortDescription xml:lang="en">Photochemical Ozone Creation
+					Potential (POCP)</common:shortDescription>
+								</referenceToLCIAMethodDataSet>
+								<meanAmount>0.0</meanAmount>
+								<common:other>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C3">3.8E-5</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A4">1.6E-4</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A1-A3">5.9E-4</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C1">6.6E-5</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="A5">7.4E-5</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C4">0.0</epd:amount>
+									<epd:amount
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											epd:module="C2">1.0E-5</epd:amount>
+									<epd:referenceToUnitGroupDataSet
+											xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+											refObjectId="01c26c17-9a76-406e-8295-f17b55fd909e"
+											type="unit group data set"
+											uri="../unitgroups/01c26c17-9a76-406e-8295-f17b55fd909e">
+										<common:shortDescription>kg Ethen-Äqv.</common:shortDescription>
+									</epd:referenceToUnitGroupDataSet>
+								</common:other>
+							</LCIAResult>
+						</LCIAResults>
+					</script></code></pre>
+                </section>
+
+            </section>
+            <section>
+
+                <section data-auto-animate data-background-color="#E7F3FF">
+
+                    <h2>
+                        Kort om APIer
+                    </h2>
+                    <h6 style="color: gray;">
+                        HTTP-anmodning
+                    </h6>
+                    <img src="./images/HTTP_Header.png" alt="" border='0' height="500px">
+                    <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">Derivative of
+                        "HTTP Header -
+                        Author: Seobility - License: CC BY-SA 4.0"</span>
+                </section>
+                <section data-auto-animate data-background-color="#E7F3FF">
+
+                    <h2>
+                        Kort om APIer
+                    </h2>
+                    <h6 style="color: gray;">
+                        GET-anmodning
+                    </h6>
+                    <img src="./images/get_parameters.png" alt="" border='0' height="500px">
+                    <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">GET
+                        Parameters -
+                        Author: Seobility - License: CC BY-SA 4.0</span>
+                </section>
+                <section data-auto-animate data-background-color="#E7F3FF">
+
+                    <h2>
+                        Kort om APIer
+                    </h2>
+                    <h6 style="color: gray;">
+                        REST API
+                    </h6>
+                    <img src="./images/rest_api.png" alt="" border='0' height="400px">
+                    <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">REST API -
+                        Author: Seobility - License: CC BY-SA 4.0</span>
+                </section>
+
+
+            </section>
+            <section>
+                <section>
+                    <h2 data-auto-animate>
+                        ECO PORTAL API
+                    </h2>
+                </section>
+
+
+
+                <section data-auto-animate data-background-color="#FFF">
+
+                    <h2 style="font-size: 45px;">
+                        ECO PORTAL API
+                    </h2>
+                    <h6 style="color: gray;">
+                        Den bagvedliggende struktur
+                    </h6>
+
+                    <img data-id="img1" src="./images/eco_portal_architecture.png" alt="" border='0' height="500px">
+                    <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">Fra: ECO
+                        Portal API - Quickstart Guide</span>
+
+                </section>
+                <section data-auto-animate data-background-color="#FFF">
+
+                    <h2>
+                        ECO PORTAL API
+                    </h2>
+                    <h6 style="color: gray;">
+                        soda4LCA
+                    </h6>
+                    <img src="./images/soda4lca.png" alt="" border='0' height="400px">
+
+
+
+                </section>
+                <section data-auto-animate data-background-color="#FFF">
+
+                    <h2>
+                        ECO PORTAL API
+                    </h2>
+                    <h6 style="color: gray;">
+                        soda4LCA
+                    </h6>
+                    <img src="./images/soda4lca.png" alt="" border='0' height="300px">
+                    <p>Dokumentationen kan findes på
+                        <a
+                            href="https://bitbucket.org/okusche/soda4lca/src/7.x-branch/Doc/src/Service_API/Service_API.md">https://bitbucket.org/okusche/soda4lca/src/7.x-branch/Doc/src/Service_API/Service_API.md</a>
+                    </p>
+
+
+                </section>
+                <section data-background-transition="fade-in fade-out" data-transition-speed="default"
+                    data-background-video="/Users/martina/Documents/ContechLabEPDProject/Video2/VideoClips/soda4lca_imovie.mp4"
+                    data-background-video-muted>
+
+                </section>
+                <section data-auto-animate>
+
+                    <h2>
+                        ECO PORTAL API
+                    </h2>
+                    <h6 style="color: gray;">
+                        Søg i en database
+                    </h6>
+                    <pre style:"font-size: 0.4em;"><code data-trim data-noescape  class="language-http" style:"font-size:
+							40%">
+						baseURL: "https://hostname.tld/resource/"
+
+					
+						
+					</code></pre>
+
+                    <pre class="fragment" style:"font-size: 0.4em"><code data-trim data-noescape class="language-SQL"  style:"font-size:
+						40%"> 
+						<script type="text/template">
+							GET /processes
+							GET /flows
+							GET /flowproperties
+							GET /unitgroups
+							GET /sources
+							GET /contacts
+							GET /lciamethods
+						</script>
+					</code></pre>
+                    <pre class="fragment" style:"font-size: 0.4em"><code data-trim data-noescape  class="language-SQL"  style:"font-size:
+						40%"> <script type="text/template">
+							GET "https://hostname.tld/resource/processes?search=true&param1=value1&param2=value2"
+						</script>
+						
+					
+					</code></pre>
+
+                    <pre class="fragment" style:"font-size: 0.4em"><code data-trim data-line-numbers data-noescape class="language-SQL"   style:"font-size:
+						40%"> <script type="text/template">
+							GET "https://ibudata.lca-data.com/resource/processes?search=true&name=plaster&validUntil=2022"
+						</script>
+						
+					
+					</code></pre>
+
+
+
+                </section>
+
+                <section data-auto-animate>
+                    <h2>
+                        ECO PORTAL API
+                    </h2>
+                    <h6 style="color: gray;">
+                        Få en bestemt EPD
+                    </h6>
+                    <pre style:"font-size: 0.4em;"><code data-trim data-noescape  class="language-http" style:"font-size:
+							40%">
+						baseURL: "https://hostname.tld/resource/"
+					</code></pre>
+                    <pre class="fragment" style:"font-size: 0.4em"><code data-trim data-noescape class="language-SQL"  style:"font-size:
+						40%"> 
+						<script type="text/template">
+							GET /processes/{uuid}?version={version}
+						</script>
+					</code></pre>
+                    <pre class="fragment" data-id="code-animation2" style:"font-size: 0.4em"><code data-trim data-line-numbers data-noescape class="language-SQL"  style:"font-size:
+						40%"> <script type="text/template">
+							GET "https://ibudata.lca-data.com/resource/processes/6017a6ce-1d4e-4e59-b508-294bd9f5f93e?version=00.01.000"
+						</script>
+					</code></pre>
+
+                </section>
+                <section data-auto-animate>
+                    <h2>
+                        ECO PORTAL API
+                    </h2>
+                    <h6 style="color: gray;">
+                        Få en bestemt EPD
+                    </h6>
+                    <pre style:"font-size: 0.4em;"><code data-trim data-noescape  class="language-http" style:"font-size:
+							40%">
+						baseURL: "https://hostname.tld/resource/"
+					</code></pre>
+                    <pre style:"font-size: 0.4em"><code data-trim data-noescape class="language-SQL"  style:"font-size:
+						40%"> 
+						<script type="text/template">
+							GET /processes/{uuid}?version={version}
+						</script>
+					</code></pre>
+
+                    <pre data-id="code-animation2" style:"font-size: 0.4em"><code data-trim data-line-numbers data-noescape class="language-SQL"  style:"font-size:
+						40%"> <script type="text/template">
+							GET "https://ibudata.lca-data.com/resource/processes/6017a6ce-1d4e-4e59-b508-294bd9f5f93e?version=00.01.000&format=JSON"
+						</script>
+					</code></pre>
+                </section>
+                <section data-auto-animate data-background-color="#FFF">
+
+                    <h2 style="font-size: 45px;">
+                        ECO PORTAL API
+                    </h2>
+
+
+                    <img data-id="img1" src="./images/eco_platform_node_list.png" alt="" border='0' height="500px">
+                    <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">Fra: ECO
+                        Portal API - Quickstart Guide</span>
+
+                </section>
+                <section data-auto-animate>
+                    <h2>
+                        ECO PORTAL API
+                    </h2>
+                    <h6 style="color: gray;">
+                        Opret bruger og generer API Access Token
+                    </h6>
+                </section>
+
+
+
+
+                <section data-auto-animate>
+                    <h2 style="font-size: 45px;">
+                        ECO PORTAL API
+                    </h2>
+                    <h6 style="color: gray;">
+                        Opret bruger og generer API Access Token
+                    </h6>
+
+                    <img data-id="img1" src="./images/eco_portal_api_fr1.png" alt="" border='0' width="1200px"
+                        height="500px">
+
+
+                </section>
+
+
+                <section data-background-color="#FFF" data-background-transition="fade-in fade-out"
+                    data-transition-speed="default"
+                    data-background-video="/Users/martina/Documents/ContechLabEPDProject/Video2/VideoClips/eco_portal_generate_api.mp4"
+                    data-background-video-muted data-background-size="contain">
+
+                </section>
+            </section>
+
+            <section>
+                <section data-auto-animate>
+                    <h2>
+                        API-kald i Python
+                    </h2>
+                    <h6 style="color: gray;">
+                        Instaler biblioteker
+                    </h6>
+
+                    <pre class="fragment" style:"font-size: 0.4em"><code data-trim data-noescape class="language-python"   style:"font-size:
+					40%"> <script type="text/template">
+						pip install requests
+						pip install json #valgfrit
+						pip install nested_lookup #valgfrit
+					</script>
+					
+				
+				</code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2>
+                        API-kald i Python
+                    </h2>
+                    <h6 style="color: gray;">
+                        Den simpleste anmodning
+                    </h6>
+
+                    <pre style:"font-size: 0.4em"><code data-trim data-noescape data-line-numbers class="language-python"   style:"font-size:
+					40%"> <script type="text/template">
+						import requests
+						response = requests.get("https://ibudata.lca-data.com/resource/processes")
+						print(response)
+					</script>
+					</code></pre>
+                    <pre class="fragment" style:"font-size: 0.4em"><code data-trim data-noescape class="language-python"   style:"font-size:
+						40%"> <script type="text/template">
+							
+							>>>> Response<200>
+						</script>
+					
+				
+					</code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2>
+                        API-kald i Python
+                    </h2>
+                    <h6 style="color: gray;">
+                        Den simpleste anmodning
+                    </h6>
+
+                    <pre style:"font-size: 0.4em"><code data-trim data-noescape data-line-numbers class="language-python"   style:"font-size:
+					40%"> <script type="text/template">
+						import requests
+						response = requests.get("https://ibudata.lca-data.com/resource/processes")
+						print(response.text)
+					</script>
+					</code></pre>
+                    <pre class="fragment" data-id="code-animation1" style:"font-size: 0.4em"><code data-trim data-line-numbers data-noescape class="language-python"   style:"font-size:
+					40%"> <script type="text/template">
+						<p:process p2:metaDataOnly="false" sapi:sourceId="IBU_DATA" 
+							xlink:href="https://ibudata.lca-data.com/resource/processes/21eb2bc4-1dfa-4e02-a2fd-0cc3329a8f7c?version=00.04.000">
+							<sapi:uuid>21eb2bc4-1dfa-4e02-a2fd-0cc3329a8f7c</sapi:uuid>
+							<sapi:dataSetVersion>00.04.000</sapi:dataSetVersion>
+							<sapi:name xml:lang="de">Flüssig aufzubringende Brückenabdichtungen auf Polyurethanbasis; lösemittelhaltig, Lösemittelgehalt kleiner 10%</sapi:name>
+							...	
+						</p:process>
+						<p:process p2:metaDataOnly="false" sapi:sourceId="IBU_DATA"
+							xlink:href="https://ibudata.lca-data.com/resource/processes/b8d35ac8-e0f8-4c17-9d57-4dbde0027fa6?version=00.06.000">
+							<sapi:uuid>b8d35ac8-e0f8-4c17-9d57-4dbde0027fa6</sapi:uuid>
+							<sapi:dataSetVersion>00.06.000</sapi:dataSetVersion>
+							<sapi:name xml:lang="de">Flüssig aufzubringende Brückenabdichtungen auf Polyurethanbasis;
+								lösemittelhaltig, Lösemittelgehalt zwischen 10% und 50%</sapi:name>
+							...
+						</p:process>
+						<p:process p2:metaDataOnly="false" sapi:sourceId="IBU_DATA"
+							xlink:href="https://ibudata.lca-data.com/resource/processes/c6f5b4f9-43b4-4fc1-b872-69231551fef2?version=00.03.000">
+							<sapi:uuid>c6f5b4f9-43b4-4fc1-b872-69231551fef2</sapi:uuid>
+							<sapi:dataSetVersion>00.03.000</sapi:dataSetVersion>
+							<sapi:name xml:lang="de">Flüssig aufzubringende Dachabdichtungen auf Basis von Epoxidharzen,
+								gefüllt oder wässrig, gefüllt mit hohem Gehalt an Füllstoffen</sapi:name>
+							...
+						</p:process>
+						<p:process p2:metaDataOnly="false" sapi:sourceId="IBU_DATA"
+							xlink:href="https://ibudata.lca-data.com/resource/processes/22024d1b-3d91-4b9e-a1ed-6dc4a3c7c710?version=00.03.000">
+							<sapi:uuid>22024d1b-3d91-4b9e-a1ed-6dc4a3c7c710</sapi:uuid>
+							<sapi:dataSetVersion>00.03.000</sapi:dataSetVersion>
+							<sapi:name xml:lang="de">Flüssig aufzubringende Dachabdichtungen auf Basis von Epoxidharzen,
+								gefüllt oder wässrig, gefüllt mit niedrigem Gehalt an Füllstoffen</sapi:name>
+							...
+						</p:process>
+						<p:process p2:metaDataOnly="false" sapi:sourceId="IBU_DATA"
+							xlink:href="https://ibudata.lca-data.com/resource/processes/21eb2bc4-1dfa-4e02-a2fd-0cc3329a8f7c?version=00.04.000">
+							<sapi:uuid>21eb2bc4-1dfa-4e02-a2fd-0cc3329a8f7c</sapi:uuid>
+							<sapi:dataSetVersion>00.04.000</sapi:dataSetVersion>
+							<sapi:name xml:lang="de">Flüssig aufzubringende Brückenabdichtungen auf Polyurethanbasis;
+								lösemittelhaltig, Lösemittelgehalt kleiner 10%</sapi:name>
+							...
+						</p:process>
+						<p:process p2:metaDataOnly="false" sapi:sourceId="IBU_DATA"
+							xlink:href="https://ibudata.lca-data.com/resource/processes/b8d35ac8-e0f8-4c17-9d57-4dbde0027fa6?version=00.06.000">
+							<sapi:uuid>b8d35ac8-e0f8-4c17-9d57-4dbde0027fa6</sapi:uuid>
+							<sapi:dataSetVersion>00.06.000</sapi:dataSetVersion>
+							<sapi:name xml:lang="de">Flüssig aufzubringende Brückenabdichtungen auf Polyurethanbasis;
+								lösemittelhaltig, Lösemittelgehalt zwischen 10% und 50%</sapi:name>
+							...
+						</p:process>
+						<p:process p2:metaDataOnly="false" sapi:sourceId="IBU_DATA"
+							xlink:href="https://ibudata.lca-data.com/resource/processes/c6f5b4f9-43b4-4fc1-b872-69231551fef2?version=00.03.000">
+							<sapi:uuid>c6f5b4f9-43b4-4fc1-b872-69231551fef2</sapi:uuid>
+							<sapi:dataSetVersion>00.03.000</sapi:dataSetVersion>
+							<sapi:name xml:lang="de">Flüssig aufzubringende Dachabdichtungen auf Basis von Epoxidharzen,
+								gefüllt oder wässrig, gefüllt mit hohem Gehalt an Füllstoffen</sapi:name>
+							...
+						</p:process>
+						<p:process p2:metaDataOnly="false" sapi:sourceId="IBU_DATA"
+							xlink:href="https://ibudata.lca-data.com/resource/processes/22024d1b-3d91-4b9e-a1ed-6dc4a3c7c710?version=00.03.000">
+							<sapi:uuid>22024d1b-3d91-4b9e-a1ed-6dc4a3c7c710</sapi:uuid>
+							<sapi:dataSetVersion>00.03.000</sapi:dataSetVersion>
+							<sapi:name xml:lang="de">Flüssig aufzubringende Dachabdichtungen auf Basis von Epoxidharzen,
+								gefüllt oder wässrig, gefüllt mit niedrigem Gehalt an Füllstoffen</sapi:name>
+							...
+						</p:process>
+						</script>
+					</code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2>
+                        API-kald i Python
+                    </h2>
+                    <h6 style="color: gray;">
+                        Den simpleste anmodning
+                    </h6>
+
+                    <pre style:"font-size: 0.4em"><code data-trim data-noescape data-line-numbers class="language-python"   style:"font-size:
+					40%"> <script type="text/template">
+						import requests
+						response = requests.get("https://ibudata.lca-data.com/resource/processes")
+						print(response.text)
+					</script>
+					</code></pre>
+                    <pre data-id="code-animation1" style:"font-size: 0.4em"><code data-auto-animate-duration="1.5" data-trim data-noescape data-line-numbers class="language-python"   style:"font-size:
+						40%"> <script type="text/template">
+							<p:process p2:metaDataOnly="false" sapi:sourceId="IBU_DATA" 
+								xlink:href="https://ibudata.lca-data.com/resource/processes/21eb2bc4-1dfa-4e02-a2fd-0cc3329a8f7c?version=00.04.000">
+								<sapi:uuid>21eb2bc4-1dfa-4e02-a2fd-0cc3329a8f7c</sapi:uuid>
+								<sapi:dataSetVersion>00.04.000</sapi:dataSetVersion>
+								<sapi:name xml:lang="de">Flüssig aufzubringende Brückenabdichtungen auf Polyurethanbasis; lösemittelhaltig, Lösemittelgehalt kleiner 10%</sapi:name>
+								<sapi:classification name="IBUCategories">
+									<sapi:class level="0">02 Bauprodukte</sapi:class>
+									<sapi:class level="1">Bauklebstoffe und Beschichtungen</sapi:class>
+									<sapi:class level="2">Reaktionsharzprodukte</sapi:class>
+								</sapi:classification>
+								<sapi:other>
+									<epd:subType>average dataset</epd:subType>
+								</sapi:other>
+								<p:type>EPD</p:type>
+								<p:location>DE</p:location>
+								<p:time>
+									<p:referenceYear>2013</p:referenceYear>
+									<p:validUntil>2018</p:validUntil>
+								</p:time>
+								<p:parameterized>false</p:parameterized>
+								<p:hasResults>false</p:hasResults>
+								<p:containsProductModel>false</p:containsProductModel>
+								<p:lciMethodInformation/>
+								<p2:dataSource type="source data set" refObjectId="28d74cc0-db8b-4d7e-bc44-5f6d56ce0c4a"/>
+								<p2:dataSource type="source data set" refObjectId="b9fdf525-e9b8-47a0-b897-2ecfe7e2cff5"/>
+								
+								<p2:registrationAuthority refObjectId="d111dbec-b024-4be5-86c5-752d6eb2cf95"/>
+							</p:process>
+							<p:process p2:metaDataOnly="false" sapi:sourceId="IBU_DATA"
+								xlink:href="https://ibudata.lca-data.com/resource/processes/b8d35ac8-e0f8-4c17-9d57-4dbde0027fa6?version=00.06.000">
+								<sapi:uuid>b8d35ac8-e0f8-4c17-9d57-4dbde0027fa6</sapi:uuid>
+								<sapi:dataSetVersion>00.06.000</sapi:dataSetVersion>
+								<sapi:name xml:lang="de">Flüssig aufzubringende Brückenabdichtungen auf Polyurethanbasis;
+									lösemittelhaltig, Lösemittelgehalt zwischen 10% und 50%</sapi:name>
+								...
+							</p:process>
+							<p:process p2:metaDataOnly="false" sapi:sourceId="IBU_DATA"
+								xlink:href="https://ibudata.lca-data.com/resource/processes/c6f5b4f9-43b4-4fc1-b872-69231551fef2?version=00.03.000">
+								<sapi:uuid>c6f5b4f9-43b4-4fc1-b872-69231551fef2</sapi:uuid>
+								<sapi:dataSetVersion>00.03.000</sapi:dataSetVersion>
+								<sapi:name xml:lang="de">Flüssig aufzubringende Dachabdichtungen auf Basis von Epoxidharzen,
+									gefüllt oder wässrig, gefüllt mit hohem Gehalt an Füllstoffen</sapi:name>
+								...
+							</p:process>
+							<p:process p2:metaDataOnly="false" sapi:sourceId="IBU_DATA"
+								xlink:href="https://ibudata.lca-data.com/resource/processes/22024d1b-3d91-4b9e-a1ed-6dc4a3c7c710?version=00.03.000">
+								<sapi:uuid>22024d1b-3d91-4b9e-a1ed-6dc4a3c7c710</sapi:uuid>
+								<sapi:dataSetVersion>00.03.000</sapi:dataSetVersion>
+								<sapi:name xml:lang="de">Flüssig aufzubringende Dachabdichtungen auf Basis von Epoxidharzen,
+									gefüllt oder wässrig, gefüllt mit niedrigem Gehalt an Füllstoffen</sapi:name>
+								...
+							</p:process>
+							</script>
+
+
+					</code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2>
+                        API-kald i Python
+                    </h2>
+                    <h6 style="color: gray;">
+                        Autorisation
+                    </h6>
+
+                    <pre style:"font-size: 0.4em"><code data-trim data-noescape class="language-python"   style:"font-size:
+					40%"> <script type="text/template">
+						Authorization: Bearer eyJhb...
+					</script>
+					</code></pre>
+                    <pre class="fragment" style:"font-size: 0.4em"><code data-trim data-line-numbers data-noescape class="language-python"   style:"font-size:
+						40%"> <script type="text/template">
+							my_header = {"Authorization": "Bearer eyJhb..."}
+							response = requests.get("https://ibudata.lca-data.com/resource/processes", headers=my_header)
+
+						</script>
+					</code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2>
+                        API-kald i Python
+                    </h2>
+                    <h6 style="color: gray;">
+                        Søgningsparametre (queries)
+                    </h6>
+
+                    <pre style:"font-size: 0.4em"><code data-trim  data-noescape class="language-python"   style:"font-size:
+					40%"> <script type="text/template">
+						GET https://hostname.tld/resource/processes?search=true[&param=value][&param=value]
+					</script>
+					</code></pre>
+                    <pre class="fragment" style:"font-size: 0.4em"><code data-trim data-line-numbers data-noescape class="language-python"   style:"font-size:
+						40%"> <script type="text/template">
+							my_params = {
+								"search": "true",
+								"name": "plaster",
+								"location": "DK",
+								"type": "EPD",
+							}
+						</script>
+						</code></pre>
+                    <pre class="fragment" style:"font-size: 0.4em"><code data-trim data-line-numbers data-ln-start-from="7" data-noescape class="language-python"   style:"font-size:
+						40%"> <script type="text/template">
+							
+							response = requests.get("https://ibudata.lca-data.com/resource/processes", params=my_params,headers=my_header)
+
+						</script>
+					</code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2 style="font-size: 50px;">
+                        Lad os kigge på det i praksis...
+                    </h2>
+
+
+                </section>
+                <section data-background-transition="fade-in fade-out" data-transition-speed="default"
+                    data-background-video="/Users/martina/Documents/ContechLabEPDProject/Video2/VideoClips/vscode_epd_2.mp4"
+                    data-background-video-muted>
+
+                </section>
+
+
+            </section>
+            <section>
+                <section data-auto-animate>
+                    <h2>
+                        Mere at gå videre med..
+                    </h2>
+                    <li class="fragment" style="text-align:left;">ILCD Validation Tool</li>
+
+
+
+
+                </section>
+                <section data-auto-animate>
+                    <h2>
+                        Mere at gå videre med..
+                    </h2>
+                    <li style="text-align:left;">ILCD Validation Tool</li>
+                    <div>
+                        <img src="./images/ilcd_val_tool.png" height="400px">
+                        <p style="text-align:left;font-size: 30px;"><em>Kan findes på
+                                <a>https://bitbucket.org/okusche/ilcdvalidationtool/src/master/</a></em></p>
+                    </div>
+
+
+                </section>
+                <section data-auto-animate>
+                    <h2>
+                        Mere at gå videre med..
+                    </h2>
+                    <li style="text-align:left;">ILCD Validation Tool</li>
+
+                    <li style="text-align:left;">LCABygs JSON import</li>
+
+
+                </section>
+                <section data-auto-animate>
+                    <h2>
+                        Mere at gå videre med..
+                    </h2>
+                    <li style="text-align:left;">ILCD Validation Tool</li>
+
+                    <li style="text-align:left;">LCABygs JSON import</li>
+                    <div>
+                        <img src="./images/lcabyg_json.png" height="300px">
+                        <p style="text-align:left;font-size: 30px;"><em>Kan findes på
+                                <a>https://lcabyg.dk/da/usermanual/brugervejledning-andre-vaerktojer/</a></em></p>
+                    </div>
+
+                </section>
+
+            </section>
+            <section data-auto-animate>
+                <h2>
+                    Opsummering
+                </h2>
+
+                <p style="text-align:left;font-size: smaller;">Gennemgang af udvalgte EPD-udbydere</p>
+                <p style="text-align:left;font-size: smaller;">Kort om EPD'er på digital format</p>
+                <p style="text-align:left;font-size: smaller;">Søgning på ECO Portal</p>
+            </section>
+            <section data-auto-animate>
+                <h2>
+                    Opsummering
+                </h2>
+                <p class="fragment grow" style="text-align:left; font-size: smaller;">Gennemgang af udvalgte
+                    EPD-udbydere</p>
+                <li style="font-size: 20px; text-align:left;"> Forskellige typer aktører</li>
+                <li style="font-size: 20px; text-align:left;">Se tabellen for detaljer</li>
+                <p style="text-align:left; font-size: smaller;">Kort om EPD'er på digital format</p>
+                <p style="text-align:left; font-size: smaller;">Søgning på ECO Portal</p>
+
+
+            </section>
+            <section data-auto-animate>
+                <h2>
+                    Opsummering
+                </h2>
+                <p style="text-align:left; font-size: smaller;">Gennemgang af udvalgte EPD-udbydere</p>
+                <li style="font-size: 20px; text-align:left;"> Forskellige typer aktører</li>
+                <li style="font-size: 20px; text-align:left;">Se tabellen for detaljer</li>
+                <p style="text-align:left; font-size: smaller;">Kort om EPD'er på digital format</p>
+                <li style="font-size: 20px; text-align:left;">Undersøg en EPD i HTML-formatet (<em>Vær ekstra opmærksom
+                        på</em> <span style="color:rgb(200, 0, 0); font-style: italic; ">den deklarede
+                        enhed</span>)
+                </li>
+                <li style="font-size: 20px; text-align:left;">Det officielle format i EU er ILCD+EPD</li>
+                <li style="font-size: 20px; text-align:left;">Du kan møde andre formater som XML, CSV og JSON</li>
+                <p style="text-align:left; font-size: smaller;">Søgning på ECO Portal</p>
+
+            </section>
+            <section data-auto-animate>
+                <h2>
+                    Opsummering
+                </h2>
+                <p style="text-align:left; font-size: smaller;">Gennemgang af udvalgte EPD-udbydere</p>
+                <li style="font-size: 20px; text-align:left;"> Forskellige typer aktører</li>
+                <li style="font-size: 20px; text-align:left;">Se tabellen for detaljer</li>
+                <p style="text-align:left; font-size: smaller;">Kort om EPD'er på digital format</p>
+                <li style="font-size: 20px; text-align:left;">Undersøg en EPD i HTML-formatet (<em>Vær ekstra opmærksom
+                        på</em> <span style="color:rgb(200, 0, 0); font-style: italic; ">den deklarede
+                        enhed</span>)
+                </li>
+                <li style="font-size: 20px; text-align:left;">Det officielle format i EU er ILCD+EPD</li>
+                <li style="font-size: 20px; text-align:left;">Du kan møde andre formater som XML, CSV og JSON</li>
+                <p style="text-align:left; font-size: smaller;">Søgning på ECO Portal</p>
+                <li style="font-size: 20px; text-align:left;">Samler EPD'er fra mange nationale udbydere</li>
+                <li style="font-size: 20px; text-align:left;">Du kan sorter efter udbyder ("noder"), standarder,
+                    gyldighed mm.</li>
+                <li style="font-size: 20px; text-align:left;">API adgang for automatiske løsninger</li>
+
+            </section>
+
+            <section>
+
+            </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+        Reveal.configure({ controls: true });
+    </script>
+</body>
+
+</html>
