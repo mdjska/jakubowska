@@ -187,13 +187,11 @@
                 </section>
 
             </section>
-            <section
-                data-background-iframe="file:///Users/martina/Documents/ContechLabEPDProject/presentations/index_tabel.html"
-                data-background-interactive data-background-color="#FFF">
+            <section data-background-iframe="./index_tabel.html" data-background-interactive
+                data-background-color="#FFF">
                 <div class="fragment fade-out"
                     style="vertical-align:middle;  width: 90%; margin-right:auto; margin-left:auto; margin-top: -200px; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0, 0, 0, 0.108); background-color: rgba(0, 0, 0, 0.691); color: #fff; padding: 20px; font-size: smaller; ">
                     <h3 style="color:#fff">Oversigt over udvalgte EPD-udbydere</h3>
-                    <p><em>Klik på en række for at se flere detaljer</em></p>
                 </div>
             </section>
 
@@ -203,15 +201,15 @@
                 </h2>
             </section>
 
-            <section
-                data-background-video="/Users/martina/Documents/ContechLabEPDProject/Video1/Screenrecordings/eco_portal_retina.mov"
-                data-background-video-muted>
-            </section>
-
-
-            <section>
+            <section data-background-video="./videos/eco_portal_search.mp4" data-background-video-muted>
 
             </section>
+            <section data-background-image="./images/eco_portal_classification1.png">
+            </section>
+
+            <section data-background-image="./images/eco_portal_classification2.png">
+            </section>
+
             <section data-auto-animate>
                 <h2 data-id="title1">Hvordan bruger man en API til at finde digitale miljøvaredata?</h2>
 
@@ -224,10 +222,7 @@
             <section data-auto-animate>
                 <h2 data-id="title2">
                     Forudsætninger</h2>
-                <img src="./images/Python_logo.png" alt="" border='0' height="180"
-                    style="vertical-align:middle;padding-top: 100px;padding-right: 50px; margin-left: -40px;">
-                <img src="./images/vscode.png" alt="" border='0' height="150"
-                    style="vertical-align:middle; padding-left: 50px; padding-top: 100px;transform:rotate(7deg)">
+                <img src="./images/Python_logo.png" alt="" border='0' height="180" style="vertical-align:middle">
 
             </section>
             <section>
@@ -319,9 +314,6 @@
                     <h2 style="font-size: 45px;">
                         Hvordan ser den rå XML-data ud?
                     </h2>
-                    <h6 style="color: gray;">
-                        Opfriskning
-                    </h6>
                     <iframe width="1200px" height="500px" style="position:relative;"
                         data-src="https://epdnorway.lca-data.com/datasetdetail/process.xhtml?uuid=165f8554-00cd-43ad-aeb7-ba769854554a&version=00.01.000&stock=PUBLIC"
                         data-preload=""></iframe>
@@ -367,7 +359,7 @@
                     <h6 style="color: gray;">
                         Process information
                     </h6>
-                    <pre style:"font-size: 0.4em"><code data-trim data-noescape data-line-numbers="1-62|3|4-6|8-15|17-27|29-31|32-37|38-42" class="language-xml" style:"font-size: 40%"> <script  style:"font-size: 40%" type="text/template">
+                    <pre style:"font-size: 0.4em"><code data-trim data-noescape data-line-numbers="1-62|3|4-6|8-15|17-27|29-31" class="language-xml" style:"font-size: 40%"> <script  style:"font-size: 40%" type="text/template">
 						<processInformation>
 							<dataSetInformation>
 								<common:UUID>165f8554-00cd-43ad-aeb7-ba769854554a</common:UUID>
@@ -730,7 +722,7 @@
                 <section data-auto-animate data-background-color="#E7F3FF">
 
                     <h2>
-                        Kort om APIer
+                        Kort om Web APIer
                     </h2>
                     <h6 style="color: gray;">
                         HTTP-anmodning
@@ -743,7 +735,7 @@
                 <section data-auto-animate data-background-color="#E7F3FF">
 
                     <h2>
-                        Kort om APIer
+                        Kort om Web APIer
                     </h2>
                     <h6 style="color: gray;">
                         GET-anmodning
@@ -756,7 +748,7 @@
                 <section data-auto-animate data-background-color="#E7F3FF">
 
                     <h2>
-                        Kort om APIer
+                        Kort om Web APIer
                     </h2>
                     <h6 style="color: gray;">
                         REST API
@@ -786,7 +778,19 @@
                         Den bagvedliggende struktur
                     </h6>
 
-                    <img data-id="img1" src="./images/eco_portal_architecture.png" alt="" border='0' height="500px">
+                    <img src="./images/eco_portal_architecture.png" alt="" border='0' height="500px">
+                    <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">Fra: ECO
+                        Portal API - Quickstart Guide</span>
+
+                </section>
+                <section data-auto-animate data-background-color="#FFF">
+
+                    <h2 style="font-size: 45px;">
+                        ECO PORTAL API
+                    </h2>
+
+
+                    <img src="./images/eco_platform_node_list.png" alt="" border='0' height="500px">
                     <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">Fra: ECO
                         Portal API - Quickstart Guide</span>
 
@@ -818,11 +822,6 @@
                             href="https://bitbucket.org/okusche/soda4lca/src/7.x-branch/Doc/src/Service_API/Service_API.md">https://bitbucket.org/okusche/soda4lca/src/7.x-branch/Doc/src/Service_API/Service_API.md</a>
                     </p>
 
-
-                </section>
-                <section data-background-transition="fade-in fade-out" data-transition-speed="default"
-                    data-background-video="/Users/martina/Documents/ContechLabEPDProject/Video2/VideoClips/soda4lca_imovie.mp4"
-                    data-background-video-muted>
 
                 </section>
                 <section data-auto-animate>
@@ -921,18 +920,7 @@
 						</script>
 					</code></pre>
                 </section>
-                <section data-auto-animate data-background-color="#FFF">
 
-                    <h2 style="font-size: 45px;">
-                        ECO PORTAL API
-                    </h2>
-
-
-                    <img data-id="img1" src="./images/eco_platform_node_list.png" alt="" border='0' height="500px">
-                    <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">Fra: ECO
-                        Portal API - Quickstart Guide</span>
-
-                </section>
                 <section data-auto-animate>
                     <h2>
                         ECO PORTAL API
@@ -961,8 +949,7 @@
 
 
                 <section data-background-color="#FFF" data-background-transition="fade-in fade-out"
-                    data-transition-speed="default"
-                    data-background-video="/Users/martina/Documents/ContechLabEPDProject/Video2/VideoClips/eco_portal_generate_api.mp4"
+                    data-transition-speed="default" data-background-video="./videos/eco_portal_generate_api.mp4"
                     data-background-video-muted data-background-size="contain">
 
                 </section>
@@ -1220,37 +1207,1060 @@
 						</script>
 					</code></pre>
                 </section>
-                <section data-auto-animate>
-                    <h2 style="font-size: 50px;">
-                        Lad os kigge på det i praksis...
-                    </h2>
-
-
-                </section>
-                <section data-background-transition="fade-in fade-out" data-transition-speed="default"
-                    data-background-video="/Users/martina/Documents/ContechLabEPDProject/Video2/VideoClips/vscode_epd_2.mp4"
-                    data-background-video-muted>
-
-                </section>
-
-
             </section>
             <section>
                 <section data-auto-animate>
                     <h2>
-                        Mere at gå videre med..
+                        Demo script
                     </h2>
-                    <li class="fragment" style="text-align:left;">ILCD Validation Tool</li>
+                </section>
+                <section data-auto-animate>
+                    <h2 style="font-size: 25px">
+                        Demo script
+                    </h2>
+                    <h6 style="color: gray;">
+                        Gem XML-fil
+                    </h6>
+                    <pre data-id="code-animation3" style:"font-size: 0.4em"><code data-trim data-line-numbers="1-29|1-4|6-9|11-21|23-29"  data-noescape class="language-python"   style:"font-size:
+						40%"> <script type="text/template">
+                                import requests
+                                import json
+                                from . import config
 
+                                # AUTHORIZATION
+                                my_header = {"Authorization": "Bearer " + config.MY_API_TOKEN}
+    
+                                # NODE URL
+                                eco_platform = "https://data.eco-platform.org/resource/processes/"
+    
+                                # PARAMS
+                                my_params = {
+                                    "search": "true",
+                                    "metaDataOnly": "false",
+                                    "distributed": "true",
+                                    "virtual": "true",
+                                    "name": "plaster",  # search keyword
+                                    "sortBy": "referenceYear",
+                                    "sortOrder": "false",
+                                    "pageSize": "5",  # number of results returned
+                                }
+    
+                                # REQUEST
+                                response = requests.get(eco_platform, params=my_params, header=my_header)
+                                print(response)
+    
+                                # SAVE TO FILE - XML
+                                result_file = open("eco_portal_search_plaster.xml", "w")
+                                result_file.write(str(response.text))
 
+						</script>
+						</code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2 style="font-size: 25px">
+                        Demo script
+                    </h2>
+                    <h6 style="color: gray;">
+                        Tilføj flere parametre
+                    </h6>
+                    <pre data-id="code-animation3" style:"font-size: 0.4em"><code data-trim data-line-numbers="21-24"  data-noescape class="language-python"   style:"font-size:
+						40%"> <script type="text/template">
+                            import requests
+                            import json
+                            from . import config
 
+                            # AUTHORIZATION
+                            my_header = {"Authorization": "Bearer " + config.MY_API_TOKEN}
+
+                            # NODE URL
+                            eco_platform = "https://data.eco-platform.org/resource/processes/"
+
+                            # PARAMS
+                            my_params = {
+                                "search": "true",
+                                "metaDataOnly": "false",
+                                "distributed": "true",
+                                "virtual": "true",
+                                "name": "plaster",  # search keyword
+                                "sortBy": "referenceYear",
+                                "sortOrder": "false",
+                                "pageSize": "5",  # number of results returned
+                                "type": "EPD",
+                                "location": "DE,RER",  # define multiple locations
+                                "format": "xml",  # XML or JSON
+                                "view": "extended",  # show all references in one file
+                            }
+
+                            # REQUEST
+                            response = requests.get(eco_platform, params=my_params, header=my_header)
+                            print(response)
+
+                            # SAVE TO FILE - XML
+                            result_file = open("eco_portal_search_plaster.xml", "w")
+                            result_file.write(str(response.text))
+
+						</script>
+						</code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2 style="font-size: 25px">
+                        Demo script
+                    </h2>
+                    <h6 style="color: gray;">
+                        Gem JSON-fil
+                    </h6>
+                    <pre data-id="code-animation3" style:"font-size: 0.4em"><code data-trim data-line-numbers="31-34"  data-noescape class="language-python"   style:"font-size:
+						40%"> <script type="text/template">
+                            import requests
+                            import json
+                            from . import config
+
+                            # AUTHORIZATION
+                            my_header = {"Authorization": "Bearer " + config.MY_API_TOKEN}
+
+                            # URL - AGGREGATOR NODE
+                            eco_platform = "https://data.eco-platform.org/resource/processes/"
+
+                            # PARAMS
+                            my_params = {
+                                "search": "true",
+                                "metaDataOnly": "false",
+                                "distributed": "true",
+                                "virtual": "true",
+                                "name": "plaster",  # search keyword
+                                "sortBy": "referenceYear",
+                                "sortOrder": "false",
+                                "pageSize": "5",  # number of results returned
+                                "type": "EPD",
+                                "location": "DE,RER",  # define multiple locations
+                                "format": "json",  # XML or JSON
+                                "view": "extended",  # show all references in one file
+                            }
+
+                            # REQUEST
+                            response = requests.get(eco_platform, params=my_params, header=my_header)
+                            print(response)
+
+                            # SAVE TO FILE - JSON
+                            json_result = json.loads(response.text)
+                            result_file_json = open("eco_portal_search_plaster.json", "w")
+                            result_file_json.write(json.dumps(json_result, indent=4))
+
+						</script>
+						</code></pre>
+                </section>
+                <section data-background-size="contain" data-background-video="./videos/demo.mp4"
+                    data-background-video-muted>
+                </section>
+                <section data-auto-animate>
+                    <h2 style="font-size: 25px">
+                        Demo script
+                    </h2>
+                    <h6 style="color: gray;">
+                        Søg på en bestemt EPD
+                    </h6>
+                    <pre data-id="code-animation3" style:"font-size: 0.4em"><code data-trim data-line-numbers  data-noescape class="language-python"   style:"font-size:
+						40%"> <script type="text/template">
+                            import requests
+                            import json
+                            from . import config
+
+                            # AUTHORIZATION
+                            my_header = {"Authorization": "Bearer " + config.MY_API_TOKEN}
+
+                            # URL - EDP PROCESS
+                            url = "https://ibudata.lca-data.com/resource/processes/f6878cee-a4bd-43da-a830-c64b975cb957"
+
+                            # PARAMS
+                            my_params = {"format": "JSON", "view": "extended"}
+
+                            # REQUESTS
+                            response = requests.get(url, params=my_params, header=my_header)
+                            print(response)
+
+                            # SAVE TO FILE - JSON
+                            json_result = json.loads(response.text)
+                            result_file_json = open("ibu_data_plasterboard.json", "w")
+                            result_file_json.write(json.dumps(json_result, indent=4))
+						</script>
+						</code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2 style="font-size: 25px">
+                        Demo script
+                    </h2>
+                    <h6 style="color: gray;">
+                        JSON-fil for en bestemt EPD
+                    </h6>
+                    <pre style:"font-size: 0.4em"><code data-trim data-line-numbers="1-33|96-100|375-383|392|393-411|405"  data-noescape class="language-json"   style:"font-size:
+						40%"> <script type="text/template">
+                            {
+                                "processInformation": {
+                                    "dataSetInformation": {
+                                        "UUID": "f6878cee-a4bd-43da-a830-c64b975cb957",
+                                        "name": {
+                                            "baseName": [
+                                                {
+                                                    "value": "GIPSPLATTE - TROCKENESTRICH / Tool",
+                                                    "lang": "de"
+                                                },
+                                                {
+                                                    "value": "DRY SCREED PLASTERBOARD / Tool",
+                                                    "lang": "en"
+                                                }
+                                            ],
+                                            "functionalUnitFlowProperties": [
+                                                {
+                                                    "lang": "de"
+                                                }
+                                            ]
+                                        },
+                                        "classificationInformation": {
+                                            "classification": [
+                                                {
+                                                    "class": [
+                                                        {
+                                                            "value": "Mineralische Baustoffe",
+                                                            "level": 0,
+                                                            "classId": "1"
+                                                        },
+                                                        {
+                                                            "value": "Steine und Elemente",
+                                                            "level": 1,
+                                                            "classId": "1.3"
+                                                        },
+                                                        {
+                                                            "value": "Trockenestrich",
+                                                            "level": 2,
+                                                            "classId": "1.3.14"
+                                                        }
+                                                    ],
+                                                    "name": "OEKOBAU.DAT"
+                                                },
+                                                {
+                                                    "class": [
+                                                        {
+                                                            "value": "02 Bauprodukte",
+                                                            "level": 0
+                                                        },
+                                                        {
+                                                            "value": "Gipsprodukte",
+                                                            "level": 1
+                                                        },
+                                                        {
+                                                            "value": "Gipsplatten",
+                                                            "level": 2
+                                                        }
+                                                    ],
+                                                    "name": "IBUCategories"
+                                                }
+                                            ]
+                                        },
+                                        "generalComment": [
+                                            {
+                                                "value": "Die Deklaration umfasst 1 m2 Gipsplatte -\nTrockenestrich mit einem Fl\u00e4chengewicht von\n20 kg/m2.",
+                                                "lang": "de"
+                                            }
+                                        ],
+                                        "other": {
+                                            "anies": [
+                                                {
+                                                    "scenario": [
+                                                        {
+                                                            "description": [
+                                                                {
+                                                                    "value": "100% Deponierung",
+                                                                    "lang": "de"
+                                                                }
+                                                            ],
+                                                            "name": "S1"
+                                                        },
+                                                        {
+                                                            "description": [
+                                                                {
+                                                                    "value": "Szenario 2",
+                                                                    "lang": "de"
+                                                                }
+                                                            ],
+                                                            "name": "S2"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "quantitativeReference": {
+                                        "referenceToReferenceFlow": [
+                                            0
+                                        ]
+                                    },
+                                    "time": {
+                                        "referenceYear": 2022,
+                                        "dataSetValidUntil": 2027,
+                                        "other": {
+                                            "anies": [
+                                                {
+                                                    "name": "publicationDateOfEPD",
+                                                    "value": 1649030400000
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "geography": {
+                                        "locationOfOperationSupplyOrProduction": {
+                                            "location": "DE"
+                                        }
+                                    },
+                                    "technology": {
+                                        "technologyDescriptionAndIncludedProcesses": [
+                                            {
+                                                "value": "Der Herstellungsprozess umfasst die in Abbildung 1 gezeigten Schritte. Abbildung 1: Fertigungsprozess von Gipsplatten nach /Gips-Datenbuch/ - Zulauf des Kartons unten, der die Sichtseite der Platte bildet und f\u00fcr die Kantenformung angeritzt wird (1) - Zulauf von Gipsbrei mit Verteilung durch die Formstation mit gleichzeitigem Kartonzulauf von oben (2\u20133) - Abbindestrecke mit Schere als Schneidevorrichtung (4\u20135) - Wendetisch mit Eintrag in einen Mehretagentrockner (6\u20138) - Plattenaustrag mit Bes\u00e4umung der Querkanten und Plattenb\u00fcndelung (9\u201311) Die herstellenden Unternehmen verf\u00fcgen \u00fcber ein Qualit\u00e4tsmanagementsystem und sind nach /DIN EN ISO 9001/ zertifiziert. \nTechnische Daten: \nTechnische Daten sind den Informationen der Hersteller zu entnehmen. Aufgrund der st\u00e4ndigen Fortschreibung technischer Normen oder Zulassungen erfolgt keine Auff\u00fchrung im Rahmen der Umwelt-Produktdeklaration.  \n\nAngaben zu wesentlichen Anforderungen k\u00f6nnen dem CE-Zeichen und/oder der Leistungserkl\u00e4rung entnommen werden /Bauproduktenverordnung/. \n\n\nBei den Herstellern k\u00f6nnen aktuelle technische Informationen abgefragt werden: \n\nhttps://www.gips.de/epd-ansprechpartner/gipsplatten/ \nDeklarierte Einheit: \nDie deklarierte Einheit ist 1m2 Gipsplatten - Trockenestrich mit einem Fl\u00e4chengewicht von 20 kg.",
+                                                "lang": "de"
+                                            },
+                                            {
+                                                "value": "The manufacturing process comprises the steps depicted in Figure 1. Fig. 1: Plasterboard manufacturing process in accordance with the /Gypsum Data Book/ - Cardboard is fed in facing downwards forming the visible side of the panel and incised to form the edges (1). - Addition of gypsum slurry which is spread in the forming station as the cardboard is fed in from above (2 \u2013 3). - Setting section with shears for cutting (4 \u2013 5) - Turning table with input in a multi-level drier (6 \u2013 8) - Panel discharge with trimming of transverse edges and bundling (9 \u2013 11) The manufacturing companies implemented a Quality Management System and are certified according to /DIN EN ISO 9001/.",
+                                                "lang": "en"
+                                            }
+                                        ],
+                                        "technologicalApplicability": [
+                                            {
+                                                "value": "Gipsplatte - Trockenestrich wird aus bandgefertigten\nGipsplatten vom Typ bis zu DFH1IR nach /DIN EN 520/ und Typ GKFI gem\u00e4\u00df /DIN 18180/ f\u00fcr die Herstellung von Trockenunterb\u00f6den im Innenbereich verwendet.\n\n\nDer Einsatz kann in \u00f6ffentlichen, privaten oder gewerblich genutzten Geb\u00e4uden erfolgen.\n\nGipsplatten - Trockenestrich kann auf Beton oder Holzbalkendecken mit oder ohne Fu\u00dfbodenheizung, in Kombination mit einer Ausgleichsschicht, D\u00e4mmschicht oder Trennschicht aufgebracht werden.",
+                                                "lang": "de"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "modellingAndValidation": {
+                                    "LCIMethodAndAllocation": {
+                                        "typeOfDataSet": "EPD",
+                                        "referenceToLCAMethodDetails": [
+                                            {
+                                                "shortDescription": [
+                                                    {
+                                                        "value": "Gipsplatten.pdf",
+                                                        "lang": "de"
+                                                    }
+                                                ],
+                                                "type": "source data set",
+                                                "refObjectId": "bb21c4aa-4784-4d0b-851f-2392fbcce1a6"
+                                            }
+                                        ],
+                                        "other": {
+                                            "anies": [
+                                                {
+                                                    "name": "subType",
+                                                    "value": "average dataset"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "dataSourcesTreatmentAndRepresentativeness": {
+                                        "referenceToDataSource": [
+                                            {
+                                                "shortDescription": [
+                                                    {
+                                                        "value": "GaBi Database (all versions)",
+                                                        "lang": "de"
+                                                    }
+                                                ],
+                                                "type": "source data set",
+                                                "refObjectId": "28d74cc0-db8b-4d7e-bc44-5f6d56ce0c4a"
+                                            },
+                                            {
+                                                "shortDescription": [
+                                                    {
+                                                        "value": "GaBi database SP40 2020",
+                                                        "lang": "de"
+                                                    }
+                                                ],
+                                                "type": "source data set",
+                                                "refObjectId": "0115289e-52f0-4920-bc7e-57b1c96aec8d"
+                                            }
+                                        ],
+                                        "useAdviceForDataSet": [
+                                            {
+                                                "value": "G\u00fcltigkeitsbereich: \nDie EPD gilt f\u00fcr die Mitgliedsunternehmen des\nBundesverbandes der Gipsindustrie e.V. gem\u00e4\u00df\naktueller Mitgliederliste auf https://www.gips.de/epd-ansprechpartner/gipsplatten/ f\u00fcr die in\nDeutschland hergestellten Produkte. Die \u00d6kobilanz\nber\u00fccksichtigt spezifische Informationen der Hersteller\nund der Zulieferer von Komponenten f\u00fcr den gesamten\nLebenszyklus. \nSystemgrenze: \nTyp der EPD gem\u00e4\u00df /EN 15804/ von der Wiege bis zum Werkstor mit- Optionen (A4\u2013A5),\n- Module C1\u2013C4 und\n- Modul D\n(A1\u2013A3 + C + D und zus\u00e4tzliche Module: A4 und A5).\n\nDie Module A1\u2013A3 (Produktionsstadium) enthalten dieRohstoffproduktion unter Ber\u00fccksichtigung deutscher Randbedingungen und deren Transporte, die Energiebereitstellung (Strom-Mix Deutschland) sowie Herstellungsprozesse, die f\u00fcr die Produktion s\u00e4mtlicher Komponenten f\u00fcr das Erzeugnis Gipsplatte erforderlich sind. Da im Allgemeinen die Gipsplatten auf Mehrwegpaletten mit Ladungssicherungsb\u00e4ndern zur Baustelle transportiert werden ist keine Verpackung ber\u00fccksichtigt.\n\nModul A4 enth\u00e4lt den Transport zur Baustelle.\n\nModul A5 umfasst den Einbau auf der Baustelle. Eine Entsorgung etwaiger Verpackung ist hier nicht erforderlich (unverpacktes Produkt auf Mehrwegpaletten).\n\nModul C1 deklariert den manuellen R\u00fcckbau.\n\nModul C2 enth\u00e4lt den Transport zum Ort derVerwertung.\n\nModul C3 umfasst das Zerkleinern und Aufbereiten der\n\nGipsprodukte. \n\n\nModul C4 wird in der Regel nicht betrachtet, da die Gewerbeabfallverordnung eine Zuf\u00fchrung von Gipsplatten zum Recycling vorsieht. In der vorliegenden \u00d6kobilanz wird zus\u00e4tzlich ein  Deponierungsszenario berechnet, um Legalausnahmen der Gewerbeabfallverordnung mit abzudecken. \n\n\nModul D enth\u00e4lt potenzielle Gutschriften des Gipsrecyclings.",
+                                                "lang": "de"
+                                            }
+                                        ],
+                                        "other": {
+                                            "anies": [
+                                                {
+                                                    "name": "referenceToOriginalEPD",
+                                                    "value": {
+                                                        "shortDescription": [
+                                                            {
+                                                                "value": "GIPSPLATTE - TROCKENESTRICH / Tool.pdf",
+                                                                "lang": "de"
+                                                            }
+                                                        ],
+                                                        "type": "source data set",
+                                                        "refObjectId": "ba9b8fcd-343f-42ca-9012-3edc646526c2"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "validation": {
+                                        "review": [
+                                            {
+                                                "referenceToNameOfReviewerAndInstitution": [
+                                                    {
+                                                        "shortDescription": [
+                                                            {
+                                                                "value": "Institut Bauen und Umwelt e. V.",
+                                                                "lang": "de"
+                                                            }
+                                                        ],
+                                                        "type": "contact data set",
+                                                        "refObjectId": "d111dbec-b024-4be5-86c5-752d6eb2cf95",
+                                                        "uri": "../contacts/d111dbec-b024-4be5-86c5-752d6eb2cf95.xml"
+                                                    }
+                                                ],
+                                                "type": "Accredited third party review"
+                                            }
+                                        ]
+                                    },
+                                    "complianceDeclarations": {
+                                        "compliance": [
+                                            {
+                                                "referenceToComplianceSystem": {
+                                                    "shortDescription": [
+                                                        {
+                                                            "value": "DIN EN 15804+A2",
+                                                            "lang": "de"
+                                                        }
+                                                    ],
+                                                    "type": "source data set",
+                                                    "refObjectId": "c0016b33-8cf7-415c-ac6e-deba0d21440d",
+                                                    "uri": "../sources/c0016b33-8cf7-415c-ac6e-deba0d21440d.xml"
+                                                }
+                                            },
+                                            {
+                                                "referenceToComplianceSystem": {
+                                                    "shortDescription": [
+                                                        {
+                                                            "value": "ISO 14025",
+                                                            "lang": "de"
+                                                        }
+                                                    ],
+                                                    "type": "source data set",
+                                                    "refObjectId": "4f2eb655-6e44-4874-a95a-e28f5442cd4d",
+                                                    "uri": "../sources/4f2eb655-6e44-4874-a95a-e28f5442cd4d.xml"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "administrativeInformation": {
+                                    "commissionerAndGoal": {
+                                        "referenceToCommissioner": [
+                                            {
+                                                "shortDescription": [
+                                                    {
+                                                        "value": "Bundesverband der Gipsindustrie e.V.",
+                                                        "lang": "de"
+                                                    }
+                                                ],
+                                                "type": "contact data set",
+                                                "refObjectId": "edd87997-d2f9-4380-81a5-5bab43c06832",
+                                                "uri": "../contacts/edd87997-d2f9-4380-81a5-5bab43c06832.xml"
+                                            }
+                                        ]
+                                    },
+                                    "dataGenerator": {
+                                        "referenceToPersonOrEntityGeneratingTheDataSet": [
+                                            {
+                                                "shortDescription": [
+                                                    {
+                                                        "value": "Bundesverband der Gipsindustrie e.V.",
+                                                        "lang": "de"
+                                                    }
+                                                ],
+                                                "type": "contact data set",
+                                                "refObjectId": "edd87997-d2f9-4380-81a5-5bab43c06832",
+                                                "uri": "../contacts/edd87997-d2f9-4380-81a5-5bab43c06832.xml"
+                                            }
+                                        ]
+                                    },
+                                    "dataEntryBy": {
+                                        "timeStamp": 1649082781212,
+                                        "referenceToDataSetFormat": [
+                                            {
+                                                "shortDescription": [
+                                                    {
+                                                        "value": "ILCD Format",
+                                                        "lang": "de"
+                                                    }
+                                                ],
+                                                "type": "source data set",
+                                                "refObjectId": "a97a0155-0234-4b87-b4ce-a45da52f2a40",
+                                                "uri": "../sources/a97a0155-0234-4b87-b4ce-a45da52f2a40.xml"
+                                            },
+                                            {
+                                                "shortDescription": [
+                                                    {
+                                                        "value": "EPD-Datenformaterweiterungen v1.2",
+                                                        "lang": "de"
+                                                    },
+                                                    {
+                                                        "value": "EPD Data Format Extensions v1.2",
+                                                        "lang": "en"
+                                                    }
+                                                ],
+                                                "type": "source data set",
+                                                "refObjectId": "a29449fd-aa2f-4de8-b5d7-4b06b43c6fde",
+                                                "uri": "../sources/a29449fd-aa2f-4de8-b5d7-4b06b43c6fde.xml"
+                                            }
+                                        ]
+                                    },
+                                    "publicationAndOwnership": {
+                                        "dataSetVersion": "00.01.000",
+                                        "referenceToRegistrationAuthority": {
+                                            "shortDescription": [
+                                                {
+                                                    "value": "Institut Bauen und Umwelt e. V.",
+                                                    "lang": "de"
+                                                }
+                                            ],
+                                            "type": "contact data set",
+                                            "refObjectId": "d111dbec-b024-4be5-86c5-752d6eb2cf95",
+                                            "uri": "../contacts/d111dbec-b024-4be5-86c5-752d6eb2cf95.xml"
+                                        },
+                                        "registrationNumber": "EPD-BVG-20210341-IBE1-DE",
+                                        "referenceToOwnershipOfDataSet": {
+                                            "shortDescription": [
+                                                {
+                                                    "value": "Bundesverband der Gipsindustrie e.V.",
+                                                    "lang": "de"
+                                                }
+                                            ],
+                                            "type": "contact data set",
+                                            "refObjectId": "edd87997-d2f9-4380-81a5-5bab43c06832",
+                                            "uri": "../contacts/edd87997-d2f9-4380-81a5-5bab43c06832.xml"
+                                        },
+                                        "copyright": true,
+                                        "licenseType": "Free of charge for all users and uses",
+                                        "accessRestrictions": [
+                                            {
+                                                "value": "None",
+                                                "lang": "en"
+                                            }
+                                        ],
+                                        "other": {
+                                            "anies": [
+                                                {
+                                                    "name": "referenceToPublisher",
+                                                    "value": {
+                                                        "shortDescription": [
+                                                            {
+                                                                "value": "Institut Bauen und Umwelt e. V.",
+                                                                "lang": "de"
+                                                            }
+                                                        ],
+                                                        "type": "contact data set",
+                                                        "refObjectId": "d111dbec-b024-4be5-86c5-752d6eb2cf95",
+                                                        "uri": "../contacts/d111dbec-b024-4be5-86c5-752d6eb2cf95.xml"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "exchanges": {
+                                    "exchange": [
+                                        {
+                                            "referenceToFlowDataSet": {
+                                                "shortDescription": [
+                                                    {
+                                                        "value": "1 m2 = 20 kg Gipsplatte - Trockenestrich ()",
+                                                        "lang": "de"
+                                                    }
+                                                ],
+                                                "type": "flow data set",
+                                                "refObjectId": "c60ef5e6-04ec-91ef-22da-ec184514389e",
+                                                "uri": "../flows/c60ef5e6-04ec-91ef-22da-ec184514389e.xml"
+                                            },
+                                            "meanAmount": 1.0,
+                                            "referencesToDataSource": {},
+                                            "dataSetInternalID": 0,
+                                            "referenceFlow": true,
+                                            "resultingflowAmount": 1.0,
+                                            "flowproperties": [
+                                                {
+                                                    "name": [
+                                                        {
+                                                            "lang": "en",
+                                                            "value": "Area"
+                                                        },
+                                                        {
+                                                            "lang": "de",
+                                                            "value": "Fl\u00e4che"
+                                                        }
+                                                    ],
+                                                    "uuid": "93a60a56-a3c8-19da-a746-0800200c9a66",
+                                                    "referenceFlowProperty": true,
+                                                    "meanValue": 1.0,
+                                                    "referenceUnit": "qm",
+                                                    "unitGroupUUID": "c20a03d7-bd90-4569-bc94-66cfd364dfc8"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "referenceToFlowDataSet": {
+                                                "shortDescription": [
+                                                    {
+                                                        "value": "Erneuerbare Prim\u00e4renergie als Energietr\u00e4ger (PERE)",
+                                                        "lang": "de"
+                                                    },
+                                                    {
+                                                        "value": "Renewable primary energy as energy carrier (PERE)",
+                                                        "lang": "en"
+                                                    }
+                                                ],
+                                                "type": "flow data set",
+                                                "refObjectId": "20f32be5-0398-4288-9b6d-accddd195317",
+                                                "uri": "../flows/20f32be5-0398-4288-9b6d-accddd195317.xml"
+                                            },
+                                            "exchange direction": "INPUT",
+                                            "other": {
+                                                "anies": [
+                                                    {
+                                                        "name": "referenceToUnitGroupDataSet",
+                                                        "value": {
+                                                            "shortDescription": [
+                                                                {
+                                                                    "value": "MJ",
+                                                                    "lang": "de"
+                                                                }
+                                                            ],
+                                                            "type": "unit group data set",
+                                                            "refObjectId": "93a60a57-a3c8-11da-a746-0800200c9a66",
+                                                            "uri": "../unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66.xml"
+                                                        }
+                                                    },
+						</script>
+						</code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2 style="font-size: 25px">
+                        Demo script
+                    </h2>
+                    <h6 style="color: gray;">
+                        Find et bestemt flow
+                    </h6>
+                    <pre style:"font-size: 0.4em"><code data-trim data-line-numbers="1-21|9|12"  data-noescape class="language-python"   style:"font-size:
+                        40%"> <script type="text/template">
+                            import requests
+                            import json
+                            from . import config
+
+                            # AUTHORIZATION
+                            my_header = {"Authorization": "Bearer " + config.MY_API_TOKEN}
+
+                            # URL - EPD FLOW
+                            url = "https://ibudata.lca-data.com/resource/flows/c60ef5e6-04ec-91ef-22da-ec184514389e"
+
+                            # PARAMS
+                            my_params = {"format": "JSON"}
+
+                            # REQUESTS
+                            response = requests.get(url, params=my_params, header=my_header)
+                            print(response)
+
+                            # SAVE TO FILE - JSON
+                            json_result = json.loads(response.text)
+                            result_file_json = open("ibu_data_plasterboard_flow.json", "w")
+                            result_file_json.write(json.dumps(json_result, indent=4))
+                        </script>
+                        </code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2 style="font-size: 25px">
+                        Demo script
+                    </h2>
+                    <h6 style="color: gray;">
+                        JSON-fil for et bestemt EPD flow
+                    </h6>
+                    <pre style:"font-size: 0.4em"><code data-trim data-line-numbers="1-33|39-60|72-91|74-78|89-90|52|46-53|93-107|108-122"  data-noescape class="language-json"   style:"font-size:
+						40%"> <script type="text/template">
+                            {
+                                "flowInformation": {
+                                    "dataSetInformation": {
+                                        "UUID": "c60ef5e6-04ec-91ef-22da-ec184514389e",
+                                        "name": {
+                                            "baseName": [
+                                                {
+                                                    "value": "1 m2 = 20 kg Gipsplatte - Trockenestrich",
+                                                    "lang": "de"
+                                                }
+                                            ]
+                                        },
+                                        "classificationInformation": {
+                                            "classification": [
+                                                {
+                                                    "class": [
+                                                        {
+                                                            "value": "Mineralische Baustoffe",
+                                                            "level": 0,
+                                                            "classId": "1"
+                                                        },
+                                                        {
+                                                            "value": "Steine und Elemente",
+                                                            "level": 1,
+                                                            "classId": "1.3"
+                                                        },
+                                                        {
+                                                            "value": "Trockenestrich",
+                                                            "level": 2,
+                                                            "classId": "1.3.14"
+                                                        }
+                                                    ],
+                                                    "name": "OEKOBAU.DAT"
+                                                }
+                                            ]
+                                        },
+                                        "other": {
+                                            "anies": [
+                                                {
+                                                    "Material": [
+                                                        {
+                                                            "BulkDetails": {
+                                                                "Name": {
+                                                                    "value": "Material"
+                                                                },
+                                                                "PropertyData": [
+                                                                    {
+                                                                        "Data": {
+                                                                            "value": "680",
+                                                                            "format": "float"
+                                                                        },
+                                                                        "property": "pr1"
+                                                                    },
+                                                                    {
+                                                                        "Data": {
+                                                                            "value": "20",
+                                                                            "format": "float"
+                                                                        },
+                                                                        "property": "pr3"
+                                                                    },
+                                                                    {
+                                                                        "Data": {
+                                                                            "value": "0.025",
+                                                                            "format": "float"
+                                                                        },
+                                                                        "property": "pr4"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ],
+                                                    "Metadata": {
+                                                        "PropertyDetails": [
+                                                            {
+                                                                "id": "pr1",
+                                                                "Name": {
+                                                                    "value": "Gross density"
+                                                                },
+                                                                "Units": {
+                                                                    "Unit": [
+                                                                        {
+                                                                            "Name": "kg"
+                                                                        },
+                                                                        {
+                                                                            "Name": "m",
+                                                                            "power": -3
+                                                                        }
+                                                                    ],
+                                                                    "name": "kg/m^3",
+                                                                    "description": "kilograms per cubic metre"
+                                                                }
+                                                            },
+                                                            {
+                                                                "id": "pr3",
+                                                                "Name": {
+                                                                    "value": "Grammage"
+                                                                },
+                                                                "Units": {
+                                                                    "Unit": [
+                                                                        {
+                                                                            "Name": "kg/m^2"
+                                                                        }
+                                                                    ],
+                                                                    "name": "kg/m^2",
+                                                                    "description": "Kilogram per square meter"
+                                                                }
+                                                            },
+                                                            {
+                                                                "id": "pr4",
+                                                                "Name": {
+                                                                    "value": "Layer thickness"
+                                                                },
+                                                                "Units": {
+                                                                    "Unit": [
+                                                                        {
+                                                                            "Name": "m"
+                                                                        }
+                                                                    ],
+                                                                    "name": "m",
+                                                                    "description": "Length"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "quantitativeReference": {
+                                        "referenceToReferenceFlowProperty": 0
+                                    }
+                                },
+                                "modellingAndValidation": {
+                                    "LCIMethod": {
+                                        "typeOfDataSet": "Product flow",
+                                        "other": {
+                                            "anies": [
+                                                {
+                                                    "name": "vendorSpecificProduct",
+                                                    "value": true
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "administrativeInformation": {
+                                    "dataEntryBy": {
+                                        "timeStamp": 1649939470794
+                                    },
+                                    "publicationAndOwnership": {
+                                        "dataSetVersion": "00.01.000"
+                                    }
+                                },
+                                "flowProperties": {
+                                    "flowProperty": [
+                                        {
+                                            "referenceToFlowPropertyDataSet": {
+                                                "shortDescription": [
+                                                    {
+                                                        "value": "Fl\u00e4che",
+                                                        "lang": "de"
+                                                    }
+                                                ],
+                                                "type": "flow property data set",
+                                                "refObjectId": "93a60a56-a3c8-19da-a746-0800200c9a66",
+                                                "uri": "../flowproperties/93a60a56-a3c8-19da-a746-0800200c9a66.xml"
+                                            },
+                                            "meanValue": 1.0,
+                                            "dataSetInternalID": 0
+                                        }
+                                    ]
+                                },
+                                "version": "1.1",
+                                "locations": "../ILCDLocations.xml"
+                            }
+						</script>
+						</code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2 style="font-size: 25px">
+                        Demo script
+                    </h2>
+                    <h6 style="color: gray;">
+                        Find specifikke informationer 1
+                    </h6>
+                    <pre style:"font-size: 0.4em"><code data-trim data-line-numbers="1-21|17-20|1-21"  data-noescape class="language-python"   style:"font-size:
+						40%"> <script type="text/template">
+                            import requests
+                            import json
+                            from . import config
+
+                            # AUTHORIZATION
+                            my_header = {"Authorization": "Bearer " + config.MY_API_TOKEN}
+
+                            # URL - EDP PROCESS
+                            url = "https://ibudata.lca-data.com/resource/processes/f6878cee-a4bd-43da-a830-c64b975cb957"
+
+                            # PARAMS
+                            my_params = {"format": "JSON", "view": "extended"}
+
+                            # REQUESTS
+                            response = requests.get(url, params=my_params, header=my_header)
+
+                            json_result = json.loads(response.text)
+                            
+                            # FIND SPECIFIC DATA - ACCESS AS A PYTHON DICTIONARY
+                            print(json_result["processInformation"]["geography"])
+						</script>
+						</code></pre>
+                    <pre class="fragment" style:"font-size: 0.4em"><code data-trim data-noescape class="language-bash"  style:"font-size:
+                        40%"> 
+                        <script type="text/template">
+                            >>> {'locationOfOperationSupplyOrProduction': {'location': 'DE'}}
+                        </script>
+                    </code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2 style="font-size: 25px">
+                        Demo script
+                    </h2>
+                    <h6 style="color: gray;">
+                        Find specifikke informationer 2
+                    </h6>
+                    <pre style:"font-size: 0.4em"><code data-trim data-line-numbers="1-25|3|18-25|1-25"  data-noescape class="language-python"   style:"font-size:
+						40%"> <script type="text/template">
+                            import requests
+                            import json
+                            from nested_lookup import nested_lookup
+                            from . import config
+
+                            # AUTHORIZATION
+                            my_header = {"Authorization": "Bearer " + config.MY_API_TOKEN}
+
+                            # URL - EDP PROCESS
+                            url = "https://ibudata.lca-data.com/resource/processes/f6878cee-a4bd-43da-a830-c64b975cb957"
+
+                            # PARAMS
+                            my_params = {"format": "JSON", "view": "extended"}
+
+                            # REQUESTS
+                            response = requests.get(url, params=my_params, header=my_header)
+
+                            json_result = json.loads(response.text)
+                            
+                            # FIND SPECIFIC DATA - USING NESTED_LOOKUP
+                            print(
+                                "Den Deklareret Enhed: ",
+                                nested_lookup("resultingflowAmount", json_result),
+                                nested_lookup("referenceUnit", json_result),
+                            )
+						</script>
+						</code></pre>
+                    <pre class="fragment" style:"font-size: 0.4em"><code data-trim data-noescape class="language-bash"  style:"font-size:
+                        40%"> 
+                        <script type="text/template">
+                            >>> Den Deklareret Enhed: [1.0] ['qm']
+                        </script>
+                    </code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2 style="font-size: 25px">
+                        Demo script
+                    </h2>
+                    <h6 style="color: gray;">
+                        Find specifikke informationer 3
+                    </h6>
+                    <pre style:"font-size: 0.4em"><code data-trim data-line-numbers="1-38|19-38"  data-noescape class="language-python"   style:"font-size:
+						40%"> <script type="text/template">
+                            import requests
+                            import json
+                            from . import config
+
+                            # AUTHORIZATION
+                            my_header = {"Authorization": "Bearer " + config.MY_API_TOKEN}
+
+                            # URL - EDP PROCESS
+                            url = "https://ibudata.lca-data.com/resource/processes/f6878cee-a4bd-43da-a830-c64b975cb957"
+
+                            # PARAMS
+                            my_params = {"format": "JSON", "view": "extended"}
+
+                            # REQUESTS
+                            response = requests.get(url, params=my_params, header=my_header)
+
+                            json_result = json.loads(response.text)
+                            
+                            # FIND SPECIFIC DATA - PRINTING EMISSIONS (FOR LOOPS)
+                            for obj in json_result["LCIAResults"]["LCIAResult"]:
+                                indicator_name = obj["referenceToLCIAMethodDataSet"]["shortDescription"][1]["value"]
+                                unit = [i for i in obj["other"]["anies"] if "name" in i][0]["value"]["shortDescription"][0]["value"]
+                                emissions = [i for i in obj["other"]["anies"] if "module" in i]
+
+                                print(
+                                    "#" * 40, f"\n Indikator: {indicator_name}\n Enhed: {unit} \n \n Udledninger: ",
+                                )
+
+                                emission_total = 0
+                                for emission in emissions:
+                                    emission_total += float(emission["value"])
+                                    print(f"\n  Modul: {emission['module']} \n  Værdi: {emission['value']}")
+                                    try:
+                                        print(f"  Scenarie: {emission['scenario']}")
+                                    except KeyError:
+                                        continue
+
+                                print(f"\n Total: {emission_total} {unit}\n")
+						</script>
+						</code></pre>
+                </section>
+
+                <section data-background-size="contain" data-background-video="./videos/demo3.mp4"
+                    data-background-video-muted>
+                </section>
+
+            </section>
+
+            <section>
+                <section data-auto-animate>
+                    <h2>
+                        Mere at gå videre med
+                    </h2>
 
                 </section>
                 <section data-auto-animate>
                     <h2>
-                        Mere at gå videre med..
+                        Mere at gå videre med
                     </h2>
-                    <li style="text-align:left;">ILCD Validation Tool</li>
+                    <h6 style="color: gray;">
+                        ÖKOBAUDAT API
+                    </h6>
+                    <pre style:"font-size: 0.4em"><code data-trim data-line-numbers  data-noescape class="language-python"   style:"font-size:
+						40%"> <script type="text/template">
+                            import requests
+                            import json
+
+                            # URL
+                            oekobaudat_url = "https://oekobaudat.de/OEKOBAU.DAT/resource/datastocks/cd2bda71-760b-4fcc-8a0b-3877c10000a8/processes"
+
+                            # PARAMS
+                            my_params = {
+                                "search": "true",
+                                "metaDataOnly": "false",
+                                "distributed": "true",
+                                "virtual": "true",
+                                "name": "plaster",  # search keyword
+                                "sortBy": "referenceYear",
+                                "sortOrder": "false",
+                                "pageSize": "5",  # number of results returned
+                                "location": "DE,RER",  # define multiple locations
+                                "format": "xml",  # XML or JSON
+                                "view": "extended",  # show all references in one file
+                            }
+
+                            # REQUEST
+                            response = requests.get(oekobaudat_url, params=my_params)
+                            print(response)
+						</script>
+						</code></pre>
+                </section>
+                <section data-auto-animate>
+                    <h2>
+                        Mere at gå videre med
+                    </h2>
+                    <h6 style="color: gray;">
+                        CSV Export
+                    </h6>
+                    <img src="./images/csv_export.png" height="500px">
+
+                </section>
+
+                <section data-auto-animate>
+                    <h2>
+                        Mere at gå videre med
+                    </h2>
+                    <h6 style="color: gray;">
+                        ILCD Validation Tool
+                    </h6>
                     <div>
                         <img src="./images/ilcd_val_tool.png" height="400px">
                         <p style="text-align:left;font-size: 30px;"><em>Kan findes på
@@ -1259,23 +2269,14 @@
 
 
                 </section>
+
                 <section data-auto-animate>
                     <h2>
-                        Mere at gå videre med..
+                        Mere at gå videre med
                     </h2>
-                    <li style="text-align:left;">ILCD Validation Tool</li>
-
-                    <li style="text-align:left;">LCABygs JSON import</li>
-
-
-                </section>
-                <section data-auto-animate>
-                    <h2>
-                        Mere at gå videre med..
-                    </h2>
-                    <li style="text-align:left;">ILCD Validation Tool</li>
-
-                    <li style="text-align:left;">LCABygs JSON import</li>
+                    <h6 style="color: gray;">
+                        LCABygs JSON import
+                    </h6>
                     <div>
                         <img src="./images/lcabyg_json.png" height="300px">
                         <p style="text-align:left;font-size: 30px;"><em>Kan findes på
@@ -1285,70 +2286,10 @@
                 </section>
 
             </section>
-            <section data-auto-animate>
-                <h2>
-                    Opsummering
-                </h2>
-
-                <p style="text-align:left;font-size: smaller;">Gennemgang af udvalgte EPD-udbydere</p>
-                <p style="text-align:left;font-size: smaller;">Kort om EPD'er på digital format</p>
-                <p style="text-align:left;font-size: smaller;">Søgning på ECO Portal</p>
-            </section>
-            <section data-auto-animate>
-                <h2>
-                    Opsummering
-                </h2>
-                <p class="fragment grow" style="text-align:left; font-size: smaller;">Gennemgang af udvalgte
-                    EPD-udbydere</p>
-                <li style="font-size: 20px; text-align:left;"> Forskellige typer aktører</li>
-                <li style="font-size: 20px; text-align:left;">Se tabellen for detaljer</li>
-                <p style="text-align:left; font-size: smaller;">Kort om EPD'er på digital format</p>
-                <p style="text-align:left; font-size: smaller;">Søgning på ECO Portal</p>
-
-
-            </section>
-            <section data-auto-animate>
-                <h2>
-                    Opsummering
-                </h2>
-                <p style="text-align:left; font-size: smaller;">Gennemgang af udvalgte EPD-udbydere</p>
-                <li style="font-size: 20px; text-align:left;"> Forskellige typer aktører</li>
-                <li style="font-size: 20px; text-align:left;">Se tabellen for detaljer</li>
-                <p style="text-align:left; font-size: smaller;">Kort om EPD'er på digital format</p>
-                <li style="font-size: 20px; text-align:left;">Undersøg en EPD i HTML-formatet (<em>Vær ekstra opmærksom
-                        på</em> <span style="color:rgb(200, 0, 0); font-style: italic; ">den deklarede
-                        enhed</span>)
-                </li>
-                <li style="font-size: 20px; text-align:left;">Det officielle format i EU er ILCD+EPD</li>
-                <li style="font-size: 20px; text-align:left;">Du kan møde andre formater som XML, CSV og JSON</li>
-                <p style="text-align:left; font-size: smaller;">Søgning på ECO Portal</p>
-
-            </section>
-            <section data-auto-animate>
-                <h2>
-                    Opsummering
-                </h2>
-                <p style="text-align:left; font-size: smaller;">Gennemgang af udvalgte EPD-udbydere</p>
-                <li style="font-size: 20px; text-align:left;"> Forskellige typer aktører</li>
-                <li style="font-size: 20px; text-align:left;">Se tabellen for detaljer</li>
-                <p style="text-align:left; font-size: smaller;">Kort om EPD'er på digital format</p>
-                <li style="font-size: 20px; text-align:left;">Undersøg en EPD i HTML-formatet (<em>Vær ekstra opmærksom
-                        på</em> <span style="color:rgb(200, 0, 0); font-style: italic; ">den deklarede
-                        enhed</span>)
-                </li>
-                <li style="font-size: 20px; text-align:left;">Det officielle format i EU er ILCD+EPD</li>
-                <li style="font-size: 20px; text-align:left;">Du kan møde andre formater som XML, CSV og JSON</li>
-                <p style="text-align:left; font-size: smaller;">Søgning på ECO Portal</p>
-                <li style="font-size: 20px; text-align:left;">Samler EPD'er fra mange nationale udbydere</li>
-                <li style="font-size: 20px; text-align:left;">Du kan sorter efter udbyder ("noder"), standarder,
-                    gyldighed mm.</li>
-                <li style="font-size: 20px; text-align:left;">API adgang for automatiske løsninger</li>
-
-            </section>
-
             <section>
 
             </section>
+
         </div>
     </div>
 
