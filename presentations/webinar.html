@@ -84,6 +84,14 @@
 
 
                 </div>
+                <aside class="notes">
+                    - en del forskellige aktører
+
+                    - epddanmark, ökobaudat og eco-platform er nogle af dem der oftest bliver nævnt i danmark
+
+                    - men der findes rigtig mange andre både udenlandske og internationale
+                    organisationer der arbejder med det her emne
+                </aside>
             </section>
 
             <section data-auto-animate data-background-color="#FFF">
@@ -133,6 +141,23 @@
                         </tr>
                     </tbody>
                 </table>
+                <aside class="notes">
+                    - man kan inddele de forskellige aktører i fire kategorier
+
+                    1) nationale EPD-udbydere. -> Den officielle programoperatør for et land, der
+                    registrerer og godkender type III miljøvaredata, altså en specifik produkt-EPD
+
+                    2) hvis programoperatørerne følger de samme EU standarder,
+                    er der som regel ingen problem i at bruge en udenlandsk EPD i sit projekt.
+                    For at gøre det nemmere at finde internationale miljøvaredata, er der opstået flere
+                    **fælles-databaser**, der samler data fra de mange nationale udbydere og tilbyder søgeplatforme.
+
+                    3) ökobaudat og "ICE-databasen". de producerer nyt generisk data
+
+                    4) værktøjer, der både har en integreret EPD-database inden i programmet, men også har en masse
+                    andre funktioner -> bygnings-LCA eller en carbon footprint screening
+
+                </aside>
 
             </section>
             <section data-markdown>
@@ -150,6 +175,29 @@
                     <h3 style="color:#fff">Eksempel-EPD i HTML-formatet</h3>
                     <p>Navn: "ABT Skanska Grön AsfaltBio Zero" <br>Udbyder: EPD-Norge</p>
                 </div>
+                <aside class="notes">
+                    - EPD for noget grøn beton fra Skanska og udbudt af EPD-Norge
+
+                    - HTML-formatet -> de fleste har sådan en
+
+                    - først generel info
+
+                    - Deklareret enhed og gyldighed
+
+                    - Deklareret enhed vigtig: definerer den mængde af produktet som LCA resultaterne svarer til. Det er
+                    ikke nemt at se på resultaterne
+
+                    - Netop den her epd viser hvorfor man skal være opmærksom
+
+                    - for EPDer -> reference flow og den deklareret enhed det samme
+
+                    - 1 * 1 (Mass) -> ikke klart hvad enheden er
+
+                    - "Modelling and Validation" -> "Data sources" -> PDF -> 1 ton
+
+                    - "Environmental Impact Indicators"; det her er LCA-resultater
+
+                </aside>
             </section>
             <section>
                 <section data-auto-animate>
@@ -159,12 +207,29 @@
                 <section data-auto-animate data-background-color="#FFF">
                     <h2>ILCD og ILCD+EPD</h2>
                     <img src="./images/ilcd_epd2.png" height="300">
+                    <aside class="notes">
+                        - officialt format for EPDer
+
+                        - udviklet af **EU-Kommissionen** og har til formål at strukturere EPD data så det er også er
+                        læsbart for computeren.
+
+                        - baseret på ILCD (International Life Cycle Data System) som bruges til selve LCA-data.
+
+                        - bruger ikke alt fra ILCD formattet, der er bl.a. nogle felter omkring LCA-metode, der ikke er
+                        med, men tilgængeld tilføjer det andre felter der er specifikke for miljøvaredeklarationer,
+
+                    </aside>
                 </section>
                 <section data-auto-animate data-background-color="#FFF">
                     <h2>ILCD og ILCD+EPD</h2>
                     <img src="./images/ilcd_folder.png" alt="" border='0' style="vertical-align:middle;float:left">
                     <img src="./images/zip.webp" alt="" border='0' height="130"
                         style="vertical-align:middle;float:none; padding-left: 100px; padding-top: 100px;transform:rotate(7deg)">
+                    <aside class="notes">
+                        - i praksis -> zip-fil
+                        - 7 mapper - hver med XML filer
+
+                    </aside>
                 </section>
 
                 <section>
@@ -183,7 +248,17 @@
                     <p style="text-align:center;" class="fragment">
                         JSON
                     </p>
+                    <aside class="notes">
+                        - afhængigt af formålet kan det være smart et andet Format
 
+                        - html har vi set
+
+                        - XML -> alt i en fil
+
+                        - CSV -> eco-portal har csv -> kan åbnes i excel
+
+                        - json -> mest populær til dataudveksling -> kun gennem API
+                    </aside>
                 </section>
 
             </section>
@@ -193,8 +268,68 @@
                     style="vertical-align:middle;  width: 90%; margin-right:auto; margin-left:auto; margin-top: -200px; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0, 0, 0, 0.108); background-color: rgba(0, 0, 0, 0.691); color: #fff; padding: 20px; font-size: smaller; ">
                     <h3 style="color:#fff">Oversigt over udvalgte EPD-udbydere</h3>
                 </div>
-            </section>
+                <aside class="notes">
+                    - 7 udbydere, som skiller sig lidt ud på den ene eller anden måde -> tjekket dem for funktioner og
+                    data de indeholder
 
+                    - først kolonne: databasetype -> har snakket om
+
+                    - næste: datatyper -> alle ud over ICE, har både specifik data (produkt-EPDer) og generisk data
+                    (branche-EPDer)
+
+                    - Datakvalitet: De fleste kræver at miljøvaredataen skal være verificeret af en uafhængig
+                    tredjepart.
+
+                    - InData, ökobaudat og Inies har så yderligere krav. InData og Eco-platform har faktisk samarbejdet
+                    om at udvikle eco-portal, men InData har
+                    også deres egen database med nogle flere krav, som f.eks. at EPDen skal være tilgængelig på engelsk
+                    og i ILCD+EPD formatet.
+
+                    - **I Frankrig** har de en udvidet version af miljøvaredeklarationer, der hedder FDES og et lign.
+                    program, der hedder PEP ecopassport.
+
+                    - FDES minder rigtig meget om almindelige EPDer, men de har noget
+                    yderligere data omkring kemikalieudledning under brug og indflydelse på indeklima.
+
+                    - PEP ecopassport®
+                    er også en slags EPD men for elektrisk, elektronisk og HVAC-udstyr, så varme, ventilation osv.
+
+                    - OneClickLCA: mange af de samme europæiske udbydere som er tredjepartsverificeret.
+
+                    - Men de har også data fra andre steder i verdenen, som ofte har en lavere grad af verificering, så
+                    man skal lige være opmærksom
+
+                    - livscyklusfaser: de fleste er defineret efter EN 15804 standarden. I ældre version +A1: kun
+                    produktionsfaser obligatorisk.
+
+                    - i +A2: både produktionsfaserne, end of life og det der hedder Modul D, som handler om produktets
+                    genbrugspotentiale.
+
+                    - ICE databasen har altid kun produktionsfasen med, det også hedder "cradle-to-gate"
+
+                    - Inies har flere krav til deres miljødata, de har f.eks. altid hele livscyklus med inkl.
+                    brugsfaser.
+
+                    - API: Eco-platform og ökobaudat kører på den samme tekniske API, Inies har deres egen løsning man
+                    skal betale for. OneClickLCA kan tilbyde en API-løsning som en specialydelse til deres kunder.
+
+                    - Formater: Eco-platform, ökobaudat og den franske Inies har flere formater tilgængelige gennem
+                    deres APIer
+                    - Ice databasen har ikke hjemmeside adgang, da hele databasen findes i to excel-filer, men den
+                    linker til nogle EPDer i PDF.
+                    - OneClickLCA er lidt særlig, fordi den database som de har samlet, kan kun bruges internt i
+                    programmet og det eneste udover det er eksterne links til PDFer.
+                    - Lcadatabase.com skriver på deres
+                    hjemmeside at man kan få både ILCD+EPD, CSV, Excel-fil og som en Simapro-database, men HTML
+                    er det enste der er tilgængeligt på deres hjemmeside lige nu. Generelt -> nyt og ikke meget info
+
+                    - Intergration: Siden OCL er mere end en database, det er primært et bygsnings-LCA værktøj, ->
+                    intergrationer med en række populære programmer. forskelligt hvor udvidet de
+                    integration er,-> eg. dedikeret plug-in til Revit, men andre programmer som Archicad
+                    kører gennem IFC-eksport.
+                </aside>
+
+            </section>
             <section>
                 <h2>
                     Søgning på ECO Portal
@@ -202,9 +337,22 @@
             </section>
 
             <section data-background-video="./videos/eco_portal_search.mp4" data-background-video-muted>
+                <aside class="notes">
+                    - navn og søgning
 
+                    - country/region, RER = Europa,
+
+                    - Til højre formater, øjet =html, XML=ilcd som zip fil, pdf, csv
+
+                    - noder = udbydere, epd danmark er under [ECOSMDP] Eco platform small data providers
+
+                    - prik betyder fuldt digitaliseret
+                </aside>
             </section>
             <section data-background-image="./images/eco_portal_classification1.png">
+                <aside class="notes">
+                    - show more columns; classification og compliance
+                </aside>
             </section>
 
             <section data-background-image="./images/eco_portal_classification2.png">
@@ -218,11 +366,26 @@
 
             <section data-auto-animate>
                 <h2 data-id="title2">Forudsætninger</h2>
+
             </section>
             <section data-auto-animate>
                 <h2 data-id="title2">
                     Forudsætninger</h2>
                 <img src="./images/Python_logo.png" alt="" border='0' height="180" style="vertical-align:middle">
+                <aside class="notes">
+                    - Man kan lave et API-kald i (1) terminal eller ethvert programmeringssprog.
+
+                    - Der findes endda en
+                    del selvstændige programmer med en grafisk brugerflade, der er lavet til at udforske APIer.
+
+                    - Jeg
+                    kommer til at vise et eksempel i python -> nemt og populært
+                    sprog.
+
+                    - der ikke noget her, der er specielt svært fra programmeringssiden, og man kan forhåbenligt sagtens
+                    forstå indholdet uden at kende til python
+
+                </aside>
 
             </section>
             <section>
@@ -236,6 +399,9 @@
                     <img src="./images/ilcd_folder.png" alt="" border='0' style="vertical-align:middle;">
                     <img src="./images/zip.webp" alt="" border='0' height="130"
                         style="vertical-align:middle;float:none; padding-left: 100px; padding-top: 100px;transform:rotate(7deg)">
+                    <aside class="notes">
+                        som nævnt
+                    </aside>
                 </section>
                 <section data-auto-animate data-background-color="#FFF">
                     <h2>EDP i ILCD+EPD</h2>
@@ -243,7 +409,15 @@
                     <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">ILCD+EPD Data
                         Format Primer
                         Author: Oliver Kusche | ok*worx</span>
+                    <aside class="notes">
+                        Hver af de her mapper repreæsenterer et seperat datasæt og de linker til hinanden internt med
+                        referencer.
 
+                        LCIA Method bruges i ILCD formatet og inkluderes oftest ikke i ILCD+EPD
+
+                        Source og contact indholder informationer der peger ud af til, eg. links til eksterne pdf'er
+                        eller kontaktinformationer på personer der har udført LCAen.
+                    </aside>
                 </section>
                 <section data-auto-animate data-background-color="#FFF">
                     <h2>EDP i ILCD+EPD</h2>
@@ -251,7 +425,10 @@
                     <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">ILCD+EPD Data
                         Format Primer
                         Author: Oliver Kusche | ok*worx</span>
-
+                    <aside class="notes">
+                        Metadata om selve EPDen, resultater og referencer til information i de andre datasæt er indholdt
+                        i "process" datasættet
+                    </aside>
                 </section>
                 <section data-auto-animate data-background-color="#FFF">
                     <h2>EDP i ILCD+EPD</h2>
@@ -259,7 +436,22 @@
                     <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">ILCD+EPD Data
                         Format Primer
                         Author: Oliver Kusche | ok*worx</span>
+                    <aside class="notes">
+                        Koncepterne "process" og "flow" kommer fra LCA, hvor hele livscyklusen er repræsenteret af
+                        del-produkter og udledninger der flyder ind og ud af
+                        processer.
 
+                        Hvis vores EPD er en process, den hvide kasse i midten, så det produkt, som EPDen beskriver, et
+                        resultat af processen og flyder ud af kassen.
+
+                        Derfor hedder det et referenceprodukt og er ikke
+                        indeholdt i selve EPD-processen.
+
+                        Referenceprodukter er indeholdt i flow-datasætet, og bliver
+                        også kaldt for product-flow datasæt.
+
+                        Det gør at man kan have flere EPDer, der refererer til det samme produkt
+                    </aside>
                 </section>
                 <section data-auto-animate data-background-color="#FFF">
                     <h2>EDP i ILCD+EPD</h2>
@@ -267,7 +459,12 @@
                     <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">ILCD+EPD Data
                         Format Primer
                         Author: Oliver Kusche | ok*worx</span>
+                    <aside class="notes">
+                        Product-flow datasæt indeholder informationer som produktets klassifikation, deklareret enhed og
+                        fysiske egenskaber som densitet.
 
+                        Internt vil de enkelte informationer ofte være indeholdt i flow egenskabsdatasættet
+                    </aside>
                 </section>
 
                 <section data-auto-animate data-background-color="#FFF">
@@ -276,7 +473,9 @@
                     <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">ILCD+EPD Data
                         Format Primer
                         Author: Oliver Kusche | ok*worx</span>
+                    <aside class="notes">
 
+                    </aside>
                 </section>
 
                 <section data-auto-animate data-background-color="#FFF">
@@ -286,7 +485,13 @@
                     <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">ILCD+EPD Data
                         Format Primer
                         Author: Oliver Kusche | ok*worx</span>
+                    <aside class="notes">
+                        Så hvis man vil finde ud af hvad enhed produktet er angivet
+                        i, -> følge referencerne -> flow datasætet-> flowegenskaber-> "unit group" datasætet.
 
+                        I praksis -> visningstype der viser værdierne af alle referencerne i én og
+                        samme fil.
+                    </aside>
                 </section>
                 <section data-auto-animate data-background-color="#FFF">
                     <h2>EDP i ILCD+EPD</h2>
@@ -295,6 +500,12 @@
                     <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">ILCD+EPD Data
                         Format Primer
                         Author: Oliver Kusche | ok*worx</span>
+                    <aside class="notes">
+                        Endelig, måden de her datasæt refererer mellem hinanden på er et UUID, som er et globalt,
+                        universalt, unikt ID.
+
+                        Efter selve ID'et vil der ofte være EPDens versionsnummer.
+                    </aside>
                 </section>
                 <section data-background-image="./images/eu_kommissionen.png" data-background-color="#FFF">
                     <div
@@ -302,6 +513,9 @@
                         <h3 style="color:#fff">Mere information om ILCD-formatet
                             og andre nyttige links på EU-kommissionens hjemmeside</h3>
                     </div>
+                    <aside class="notes">
+                        ILCD+EPD formatet og LCA data, tilhørende værktøjer og dokumenter
+                    </aside>
                 </section>
             </section>
             <section>
@@ -317,7 +531,10 @@
                     <iframe width="1200px" height="500px" style="position:relative;"
                         data-src="https://epdnorway.lca-data.com/datasetdetail/process.xhtml?uuid=165f8554-00cd-43ad-aeb7-ba769854554a&version=00.01.000&stock=PUBLIC"
                         data-preload=""></iframe>
-
+                    <aside class="notes">
+                        informationen i en EPD -> 4 kategorier -> et venste
+                        felt med et navn og et højre-felt med selve værdien eller indeholdet.
+                    </aside>
 
                 </section>
                 <section data-auto-animate>
@@ -350,6 +567,13 @@
 							</LCIAResults>
 							</processDataSet>
 					</script></code></pre>
+                    <aside class="notes">
+                        XML følger generelt den samme struktur
+
+                        toppen -> links til de forskellige datasæt
+
+                        "environmental Indicators" er dog splittet i to; "exchanges" og "lcia results"
+                    </aside>
 
                 </section>
                 <section data-auto-animate>
@@ -423,7 +647,11 @@
 							</technology>
 						</processInformation>
 					</script></code></pre>
+                    <aside class="notes">
+                        første kategori, processInformation -> samme informationer som HTML
 
+                        ikke nædvendigvis samme rækkefølge
+                    </aside>
 
                 </section>
 
@@ -714,6 +942,18 @@
 							</LCIAResult>
 						</LCIAResults>
 					</script></code></pre>
+                    <aside class="notes">
+                        I LCA resultaterne -> det første stykke reference til LCIA Metode for den specifikke
+                        miljøpåvirning + navnet
+
+                        < common_other> tag indeholder resultaterne for hver livscyklusfase.
+                            Her har vi f.eks. værdien --> 4.5E-7 for modul A1-A3.
+
+                            Det sidste stykke er en reference til enheden for denne miljøpåvirkning.
+
+                            Her har de så også
+                            oplyst selve enheden i kommentarfeltet, men det er ikke obligatorisk.
+                    </aside>
                 </section>
 
             </section>
@@ -731,6 +971,20 @@
                     <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">Derivative of
                         "HTTP Header -
                         Author: Seobility - License: CC BY-SA 4.0"</span>
+                    <aside class="notes">
+                        Ultrakort om APIer
+
+                        når computeren kommunikerer med serveren skal den fortælle den to ting:
+
+                        - URL
+                        - og HTTP metode. Metode -> verbum der fortæller hvad vi vil gøre. Vi kommer kun til at bruge
+                        GET, som fortæller at -> kun læse -> ingen ændringer
+
+                        Tilbage får vi:
+                        - statuskode -> 200 OK. 404 -> siden kunne ikke findes
+                        - og selve content. på internettet er det typisk HTML Schneidevorrichtung
+
+                    </aside>
                 </section>
                 <section data-auto-animate data-background-color="#E7F3FF">
 
@@ -744,6 +998,11 @@
                     <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">GET
                         Parameters -
                         Author: Seobility - License: CC BY-SA 4.0</span>
+                    <aside class="notes">
+                        - URL kan indeholde parametre. Her søger vi efter "gaming" og størrelsen "15'' " blandt
+                        "laptops"
+
+                    </aside>
                 </section>
                 <section data-auto-animate data-background-color="#E7F3FF">
 
@@ -756,6 +1015,14 @@
                     <img src="./images/rest_api.png" alt="" border='0' height="400px">
                     <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">REST API -
                         Author: Seobility - License: CC BY-SA 4.0</span>
+                    <aside class="notes">
+                        - Når de to programmere kommunikerer over internettet hedder det en web API
+
+                        - den mest standard indenfor web APIer i dag, er REST
+
+                        - Konceptet bag en REST API er baseret på HTTP anmodninger, så et REST API-kald skal på samme
+                        måde indeholde en URL og en HTTP metode. Som svar, får man data i enten JSON eller XML-formatet.
+                    </aside>
                 </section>
 
 
@@ -781,6 +1048,13 @@
                     <img src="./images/eco_portal_architecture.png" alt="" border='0' height="500px">
                     <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">Fra: ECO
                         Portal API - Quickstart Guide</span>
+                    <aside class="notes">
+                        - landes databaser = "noder", eco-platform = "samlingsnode" for dem alle.
+
+                        - søgning i to steps
+                        - først deres node -> finde UUID
+                        - så nyt kald til national node
+                    </aside>
 
                 </section>
                 <section data-auto-animate data-background-color="#FFF">
@@ -794,6 +1068,12 @@
                     <span class="attribution" style="color:cadetblue; font-variant: small-caps; bottom:0%">Fra: ECO
                         Portal API - Quickstart Guide</span>
 
+                    <aside class="notes">
+                        - I ECO-portal API Quickstart Guide, som kan findes på deres hjemmeside under API FAQ,
+
+                        tabel med base URLs til alle de forskellige udbydere som er tilkoblet eco portal.
+                    </aside>
+
                 </section>
                 <section data-auto-animate data-background-color="#FFF">
 
@@ -804,7 +1084,13 @@
                         soda4LCA
                     </h6>
                     <img src="./images/soda4lca.png" alt="" border='0' height="400px">
+                    <aside class="notes">
+                        Eco-platform og ökobaudat opererer på den samme database platform, der hedder soda4LCA.
 
+                        fri software webprogram, der opbevarer og henter LCI- og LCIA data.
+
+                        vi bruger deres REST API gennem eco portals api
+                    </aside>
 
 
                 </section>
@@ -821,6 +1107,10 @@
                         <a
                             href="https://bitbucket.org/okusche/soda4lca/src/7.x-branch/Doc/src/Service_API/Service_API.md">https://bitbucket.org/okusche/soda4lca/src/7.x-branch/Doc/src/Service_API/Service_API.md</a>
                     </p>
+                    <aside class="notes">
+                        jeg kun til at vise nogle basis-søgninger, så hvis I gerne vil finde finde flere funktioner
+                        eller bliver i tvivl om noget, kan I finde dokumentationen for APIen på det her link:
+                    </aside>
 
 
                 </section>
@@ -867,6 +1157,14 @@
 						
 					
 					</code></pre>
+                    <aside class="notes">
+                        - et kald følge formen URL+'resource' efterfulgt af en af de databaser, som er defineret i ILCD
+                        formatet
+
+                        - Så en basis-søgning i nodens EPD-data, vil oftest følge den her syntax:
+
+                        - F.eks. en søgning på IBU data efter gipsplade, der er gyldig til mindst 2022
+                    </aside>
 
 
 
@@ -894,6 +1192,14 @@
 							GET "https://ibudata.lca-data.com/resource/processes/6017a6ce-1d4e-4e59-b508-294bd9f5f93e?version=00.01.000"
 						</script>
 					</code></pre>
+                    <aside class="notes">
+                        - En generel søgning returner som standard kun metadata
+
+                        - specifikke informationer fra den, skal man bare tilføje dens UUID og eventuelt en version,
+                        efter processes/.
+
+                        - eksempel for ibu-data.
+                    </aside>
 
                 </section>
                 <section data-auto-animate>
@@ -919,6 +1225,11 @@
 							GET "https://ibudata.lca-data.com/resource/processes/6017a6ce-1d4e-4e59-b508-294bd9f5f93e?version=00.01.000&format=JSON"
 						</script>
 					</code></pre>
+                    <aside class="notes">
+
+
+                        - eksempel for ibu-data.fter den URL, kan man tilføje flere parametre som f.eks format
+                    </aside>
                 </section>
 
                 <section data-auto-animate>
@@ -943,7 +1254,12 @@
 
                     <img data-id="img1" src="./images/eco_portal_api_fr1.png" alt="" border='0' width="1200px"
                         height="500px">
+                    <aside class="notes">
 
+
+                        - opret en bruger på Eco-portal og får fat på en accesss token som skal bruges til at tilkoble
+                        APIen
+                    </aside>
 
                 </section>
 
@@ -969,7 +1285,14 @@
 						pip install requests
 						pip install json #valgfrit
 						pip install nested_lookup #valgfrit
-					</script>
+                    <aside class="notes">
+                        Det mest populære bibliotek til at lave API-kald i Python er `requests`. 
+                        
+                        Der udover, hvis man gerne vil udforske dataen i JSON, skal man også installere `JSON` biblioteket. 
+                        
+                        `nested_lookup` biblioteket gør det nemmere at søge efter dataen i EPDen
+                    </aside>
+                    </script>
 					
 				
 				</code></pre>
@@ -997,6 +1320,17 @@
 					
 				
 					</code></pre>
+                    <aside class="notes">
+                        For at lave den simpleste anmodning
+
+                        først importere requests biblioteket.
+
+                        Så bruger vi "GET"-metoden fra biblioteket ved at skrive requests.get og i parantesen inkluderer
+                        vores URL.
+
+                        Så kan vi printe det svar vi får tilbage, og hvis alt gik godt, så får vi statuskoden
+                        200.
+                    </aside>
                 </section>
                 <section data-auto-animate>
                     <h2>
@@ -1080,6 +1414,12 @@
 						</p:process>
 						</script>
 					</code></pre>
+                    <aside class="notes">
+                        For at rent faktisk få indholdet af svaret og ikke kun statuskoden, skal vi printe vores svar
+                        "response".text
+
+                        her eksempel er det en liste af alle EPDer der ligger på IBU-data
+                    </aside>
                 </section>
                 <section data-auto-animate>
                     <h2>
@@ -1154,6 +1494,9 @@
 
 
 					</code></pre>
+                    <aside class="notes">
+                        hver indholder info som set før
+                    </aside>
                 </section>
                 <section data-auto-animate>
                     <h2>
@@ -1175,6 +1518,9 @@
 
 						</script>
 					</code></pre>
+                    <aside class="notes">
+                        autorisere sin forbindelse med hver eneste anmodning
+                    </aside>
                 </section>
                 <section data-auto-animate>
                     <h2>
@@ -1206,6 +1552,12 @@
 
 						</script>
 					</code></pre>
+                    <aside class="notes">
+                        i stedet for at skrive parametre i et langt link som jeg viste før..
+
+                        definere parametrene seperat i en (python) dictionary. Så kan de bare indkluderes i anmodningen
+                        under argumentet "params
+                    </aside>
                 </section>
             </section>
             <section>
@@ -1843,7 +2195,7 @@
 						</code></pre>
                 </section>
                 <section data-auto-animate>
-                    <h2 style="font-size: 25px">
+                    <h2 style="font-size: 30px">
                         Demo script
                     </h2>
                     <h6 style="color: gray;">
@@ -1876,7 +2228,7 @@
                         </code></pre>
                 </section>
                 <section data-auto-animate>
-                    <h2 style="font-size: 25px">
+                    <h2 style="font-size: 30px">
                         Demo script
                     </h2>
                     <h6 style="color: gray;">
@@ -2063,7 +2415,7 @@
 						</code></pre>
                 </section>
                 <section data-auto-animate>
-                    <h2 style="font-size: 25px">
+                    <h2 style="font-size: 30px">
                         Demo script
                     </h2>
                     <h6 style="color: gray;">
@@ -2101,7 +2453,7 @@
                     </code></pre>
                 </section>
                 <section data-auto-animate>
-                    <h2 style="font-size: 25px">
+                    <h2 style="font-size: 30px">
                         Demo script
                     </h2>
                     <h6 style="color: gray;">
@@ -2144,7 +2496,7 @@
                     </code></pre>
                 </section>
                 <section data-auto-animate>
-                    <h2 style="font-size: 25px">
+                    <h2 style="font-size: 30px">
                         Demo script
                     </h2>
                     <h6 style="color: gray;">
@@ -2242,6 +2594,15 @@
                             print(response)
 						</script>
 						</code></pre>
+                    <aside class="notes">
+                        alt det vi gjorde her, kan på samme måde bruges til ökobaudats API.
+
+                        URL på
+                        deres hjemmeside
+
+                        det eneste, der er anderledes er, at ökobaudat ikke kræver at man
+                        autoriserer sin anmodning. -> lade være med at inkludere headeren
+                    </aside>
                 </section>
                 <section data-auto-animate>
                     <h2>
@@ -2251,7 +2612,13 @@
                         CSV Export
                     </h6>
                     <img src="./images/csv_export.png" height="500px">
+                    <aside class="notes">
+                        CSV Export af hele noderen
 
+                        Her er det ibu-data
+
+                        alt info også resultater
+                    </aside>
                 </section>
 
                 <section data-auto-animate>
@@ -2266,6 +2633,10 @@
                         <p style="text-align:left;font-size: 30px;"><em>Kan findes på
                                 <a>https://bitbucket.org/okusche/ilcdvalidationtool/src/master/</a></em></p>
                     </div>
+                    <aside class="notes">
+                        ILCD validation tool, som kan bruges til at automatisk tjekke kvaliteten af en epd i ILCD+EPD
+                        data.
+                    </aside>
 
 
                 </section>
@@ -2282,6 +2653,10 @@
                         <p style="text-align:left;font-size: 30px;"><em>Kan findes på
                                 <a>https://lcabyg.dk/da/usermanual/brugervejledning-andre-vaerktojer/</a></em></p>
                     </div>
+                    <aside class="notes">
+                        LCAByg også har mulighed for at importere brugerdata i JSON formatet -> men json dataen skal
+                        omstruktureres
+                    </aside>
 
                 </section>
 
@@ -2303,6 +2678,10 @@
         // - https://revealjs.com/config/
         Reveal.initialize({
             hash: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'fade',
 
             // Learn about plugins: https://revealjs.com/plugins/
             plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
