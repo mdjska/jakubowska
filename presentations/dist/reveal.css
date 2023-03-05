@@ -1,9 +1,9 @@
 /*!
-* reveal.js 4.3.1
+* reveal.js 4.4.0
 * https://revealjs.com
 * MIT licensed
 *
-* Copyright (C) 2011-2022 Hakim El Hattab, https://hakim.se
+* Copyright (C) 2011-2023 Hakim El Hattab, https://hakim.se
 */
 .reveal .r-stretch,
 .reveal .stretch {
@@ -43,7 +43,6 @@
 .reveal .r-vstack video {
     min-width: 0;
     min-height: 0;
-    -o-object-fit: contain;
     object-fit: contain
 }
 
@@ -111,22 +110,6 @@ html.reveal-full-page {
     margin: 0;
     background-color: #fff;
     color: #000
-}
-
-.reveal-viewport:-webkit-full-screen {
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    transform: none !important
-}
-
-.reveal-viewport:-ms-fullscreen {
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    transform: none !important
 }
 
 .reveal-viewport:fullscreen {
@@ -789,7 +772,9 @@ html.reveal-full-page {
 }
 
 .reveal .slides>section.future,
+.reveal .slides>section.future>section,
 .reveal .slides>section.past,
+.reveal .slides>section.past>section,
 .reveal .slides>section>section.future,
 .reveal .slides>section>section.past {
     opacity: 0
@@ -968,7 +953,6 @@ html.reveal-full-page {
 .reveal.cube .slides section {
     padding: 30px;
     min-height: 700px;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     box-sizing: border-box;
     transform-style: preserve-3d
@@ -1208,6 +1192,17 @@ html.reveal-full-page {
     visibility: visible !important
 }
 
+.reveal .slide-background video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    top: 0;
+    left: 0;
+    object-fit: cover
+}
+
 .reveal .attribution {
     position: fixed;
     bottom: 0px !important;
@@ -1217,20 +1212,25 @@ html.reveal-full-page {
 
 }
 
-.reveal .slide-background video {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
-    top: 0;
-    left: 0;
-    -o-object-fit: cover;
-    object-fit: cover
+.reveal .attributionto {
+    position: fixed;
+    bottom: 60px !important;
+    right: -150px !important;
+    font-size: 0.25em;
+
+
+}
+
+.reveal .attributionthree {
+    position: fixed;
+    bottom: -50px !important;
+    right: -150px !important;
+    font-size: 0.25em;
+
+
 }
 
 .reveal .slide-background[data-background-size=contain] video {
-    -o-object-fit: contain;
     object-fit: contain
 }
 
@@ -1699,7 +1699,6 @@ html.reveal-full-page {
     transition: all .4s ease;
     transform-origin: 50% 0;
     transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden
 }
 
@@ -1715,7 +1714,6 @@ html.reveal-full-page {
     left: 0;
     top: 0;
     padding: 0 2px;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transform-origin: 50% 0;
     transform: translate3d(0, 110%, 0) rotateX(-90deg)
@@ -1811,10 +1809,43 @@ html.reveal-full-page {
     }
 }
 
+.reveal .jump-to-slide {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 30;
+    font-size: 32px;
+    -webkit-tap-highlight-color: transparent
+}
+
+.reveal .jump-to-slide-input {
+    background: 0 0;
+    padding: 8px;
+    font-size: inherit;
+    color: currentColor;
+    border: 0
+}
+
+.reveal .jump-to-slide-input::placeholder {
+    color: currentColor;
+    opacity: .5
+}
+
+.reveal.has-dark-background .jump-to-slide-input {
+    color: #fff
+}
+
+.reveal.has-light-background .jump-to-slide-input {
+    color: #222
+}
+
+.reveal .jump-to-slide-input:focus {
+    outline: 0
+}
+
 .zoomed .reveal *,
 .zoomed .reveal :after,
 .zoomed .reveal :before {
-    -webkit-backface-visibility: visible !important;
     backface-visibility: visible !important
 }
 
@@ -1970,49 +2001,43 @@ html.print-pdf .aria-status {
 
 @media print {
     html:not(.print-pdf) {
-        background: #fff;
+        overflow: visible;
         width: auto;
-        height: auto;
-        overflow: visible
+        height: auto
     }
 
     html:not(.print-pdf) body {
-        background: #fff;
-        font-size: 20pt;
-        width: auto;
-        height: auto;
-        border: 0;
-        margin: 0 5%;
+        margin: 0;
         padding: 0;
-        overflow: visible;
-        float: none !important
+        overflow: visible
     }
 
-    html:not(.print-pdf) .controls,
-    html:not(.print-pdf) .fork-reveal,
-    html:not(.print-pdf) .nestedarrow,
+    html:not(.print-pdf) .reveal {
+        background: #fff;
+        font-size: 20pt
+    }
+
     html:not(.print-pdf) .reveal .backgrounds,
+    html:not(.print-pdf) .reveal .controls,
     html:not(.print-pdf) .reveal .progress,
     html:not(.print-pdf) .reveal .slide-number,
-    html:not(.print-pdf) .share-reveal,
-    html:not(.print-pdf) .state-background {
+    html:not(.print-pdf) .reveal .state-background {
         display: none !important
     }
 
-    html:not(.print-pdf) body,
-    html:not(.print-pdf) li,
-    html:not(.print-pdf) p,
-    html:not(.print-pdf) td {
+    html:not(.print-pdf) .reveal li,
+    html:not(.print-pdf) .reveal p,
+    html:not(.print-pdf) .reveal td {
         font-size: 20pt !important;
         color: #000
     }
 
-    html:not(.print-pdf) h1,
-    html:not(.print-pdf) h2,
-    html:not(.print-pdf) h3,
-    html:not(.print-pdf) h4,
-    html:not(.print-pdf) h5,
-    html:not(.print-pdf) h6 {
+    html:not(.print-pdf) .reveal h1,
+    html:not(.print-pdf) .reveal h2,
+    html:not(.print-pdf) .reveal h3,
+    html:not(.print-pdf) .reveal h4,
+    html:not(.print-pdf) .reveal h5,
+    html:not(.print-pdf) .reveal h6 {
         color: #000 !important;
         height: auto;
         line-height: normal;
@@ -2020,43 +2045,43 @@ html.print-pdf .aria-status {
         letter-spacing: normal
     }
 
-    html:not(.print-pdf) h1 {
+    html:not(.print-pdf) .reveal h1 {
         font-size: 28pt !important
     }
 
-    html:not(.print-pdf) h2 {
+    html:not(.print-pdf) .reveal h2 {
         font-size: 24pt !important
     }
 
-    html:not(.print-pdf) h3 {
+    html:not(.print-pdf) .reveal h3 {
         font-size: 22pt !important
     }
 
-    html:not(.print-pdf) h4 {
+    html:not(.print-pdf) .reveal h4 {
         font-size: 22pt !important;
         font-variant: small-caps
     }
 
-    html:not(.print-pdf) h5 {
+    html:not(.print-pdf) .reveal h5 {
         font-size: 21pt !important
     }
 
-    html:not(.print-pdf) h6 {
+    html:not(.print-pdf) .reveal h6 {
         font-size: 20pt !important;
         font-style: italic
     }
 
-    html:not(.print-pdf) a:link,
-    html:not(.print-pdf) a:visited {
+    html:not(.print-pdf) .reveal a:link,
+    html:not(.print-pdf) .reveal a:visited {
         color: #000 !important;
         font-weight: 700;
         text-decoration: underline
     }
 
-    html:not(.print-pdf) div,
-    html:not(.print-pdf) ol,
-    html:not(.print-pdf) p,
-    html:not(.print-pdf) ul {
+    html:not(.print-pdf) .reveal div,
+    html:not(.print-pdf) .reveal ol,
+    html:not(.print-pdf) .reveal p,
+    html:not(.print-pdf) .reveal ul {
         visibility: visible;
         position: static;
         width: auto;
@@ -2123,11 +2148,11 @@ html.print-pdf .aria-status {
         padding: 0 !important
     }
 
-    html:not(.print-pdf) .reveal section:last-of-type {
+    html:not(.print-pdf) .reveal .slides section:last-of-type {
         page-break-after: avoid !important
     }
 
-    html:not(.print-pdf) .reveal section .fragment {
+    html:not(.print-pdf) .reveal .slides section .fragment {
         opacity: 1 !important;
         visibility: visible !important;
         transform: none !important
