@@ -29,6 +29,10 @@
 				<span class="attributionthree" style="color:cadetblue; font-variant: small-caps">
 					Inspireret af <a href="https://www.youtube.com/watch?v=h2Rv9iu7yDk&t=198s">"Introduction to OpenBIM,
 						Native IFC, and Open Source AEC"</a>, Dion Moult</a></span>
+				<aside class="notes">
+					◼︎ Anbefaler Dion's præsentation, går mere i dybde med OpenBIM og IFC.
+
+				</aside>
 			</section>
 
 			<section>
@@ -54,14 +58,14 @@
 				</p>
 
 				<aside class="notes">
-					- Den data model som Revit bruger til at beskrive en væg er anderledes end den data model ArchiCAD
-					bruger.
-					- Det betyder at vi ikke kan overføre en væg fra det ene program til det andet på en *nem* måde. Der
-					foregår meget oversættelse under overfladen. Ligesom matche tabeller i klassifikationssystemer.
-					- Det går meget ud over data kvaliteten. Når der er så mange forskellige måder at definere en væg
-					på, bruger vi tid på at skændes over hvilken definition er den bedste i stedet for at snakke om
-					vigtigere ting.
-					- På den måde, er vores nuværende BIM oftest ikke bedre end et spreadsheet.
+					◼︎ Revit data model for en væg ≠ ArchiCAD
+					◼︎ Vi kan ikke overføre en væg fra det ene program til det andet på en *nem* måde.
+					◼︎ Der foregår meget oversættelse under overfladen. ◼︎ Ligesom matche tabeller i
+					klassifikationssystemer.
+					◼︎ går meget ud over data kvaliteten.
+					◼︎ mange forskellige måder at definere en væg
+					på -> vi skændes over hvilken definition er den bedste
+					◼︎ nuværende BIM oftest ikke bedre end et spreadsheet.
 
 				</aside>
 
@@ -86,14 +90,14 @@
 					➡ Nuværende BIM er derfor ofte ikke bedre end et regneark...
 				</p>
 				<aside class="notes">
-					- Den data model som Revit bruger til at beskrive en væg er anderledes end den data model ArchiCAD
-					bruger.
-					- Det betyder at vi ikke kan overføre en væg fra det ene program til det andet på en *nem* måde. Der
-					foregår meget oversættelse under overfladen. Ligesom matche tabeller i klassifikationssystemer.
-					- Det går meget ud over data kvaliteten. Når der er så mange forskellige måder at definere en væg
-					på, bruger vi tid på at skændes over hvilken definition er den bedste i stedet for at snakke om
-					vigtigere ting.
-					- På den måde, er vores nuværende BIM oftest ikke bedre end et spreadsheet.
+					◼︎ Revit data model for en væg ≠ ArchiCAD
+					◼︎ Vi kan ikke overføre en væg fra det ene program til det andet på en *nem* måde.
+					◼︎ Der foregår meget oversættelse under overfladen. ◼︎ Ligesom matche tabeller i
+					klassifikationssystemer.
+					◼︎ går meget ud over data kvaliteten.
+					◼︎ mange forskellige måder at definere en væg
+					på -> vi skændes over hvilken definition er den bedste
+					◼︎ nuværende BIM oftest ikke bedre end et spreadsheet.
 				</aside>
 
 			</section>
@@ -144,7 +148,7 @@
 						href="datastandards.directory/glossary">datastandards.directory/glossary</a>), <a
 						href="data.europa.eu">data.europa.eu</a></span>
 			</section>
-			<section data-auto-animate>
+			<section data-visibility="hidden" data-auto-animate>
 				<h3>Løsning: <span style="color:rgb(197, 55, 55)">Åbne data
 						standarder</span>.</h3>
 
@@ -180,10 +184,10 @@
 					<li class="fragment">IFC (Industry Foundation Classes)</li>
 					<li class="fragment">BCF (BIM Collaboration Format)</li>
 					<li class="fragment">IDS (Information Delivery Specification)</li>
-					<li class="fragment">BSDD (buildingSMART Data Dictionary)</li>
-					<li class="fragment">COBie (Construction-Operations Building information exchange)</li>
 					<li class="fragment">MicroMVD (Micro Model View Definition)</li>
 					<span class="fragment">
+						<li>BSDD (buildingSMART Data Dictionary)</li>
+						<li>COBie (Construction-Operations Building information exchange)</li>
 						<li>BrickSchema</li>
 						<li>BHoM</li>
 						<li>dotbim</li>
@@ -192,6 +196,10 @@
 					</span>
 
 				</ul>
+				<aside class="notes">
+					Vi kommer til at fokusere på IFC
+				</aside>
+
 			</section>
 			<section>
 				<blockquote>
@@ -201,6 +209,10 @@
 					range of
 					hardware devices, software platforms, and interfaces for many different use cases.
 				</blockquote>
+				<aside class="notes">
+					◼︎ Definition af IFC stjålet fra BuildingSMART's hjemmeside.
+					◼︎ Vigtig del at IFC er en åben standard
+				</aside>
 			</section>
 			<section>
 				OpenBIM is about <span style="color:rgb(197, 55, 55)">freedom of data</span>.
@@ -218,6 +230,10 @@
 					* Obs! Fri software har ikke noget at gøre med pris!</span>
 			</section>
 			<section data-background-iframe="https://opendefinition.org/" data-background-interactive>
+				<aside class="notes">
+					◼︎ Definitionen af fri software stemmer meget overens med den såkaldte "Open Definition" brugt af EU
+					i deres arbejde med offentlige data og åbne standarder.
+				</aside>
 			</section>
 			<section>
 				<h4><span style="color:rgb(197, 55, 55)">Oversat</span> OpenBIM vs <span
@@ -244,18 +260,55 @@
 				<br>
 				<img src="./images/nativebim/ifclogo.png" alt="" border='0' height='70'
 					style="vertical-align:middle;margin:50px 20px">
-
+				<aside class="notes">
+					◼︎ Native OpenBIM eller NativeIFC er et udtryk for programmer der har IFC som deres grundlæggende
+					datamodel.
+					◼︎ Dvs. ingen export, import eller oversættelse af data. Vi modellerer direkte i IFC.
+					◼︎ Vi kommer til at fokusere på BlenderBIM
+				</aside>
 			</section>
-			<!-- BlenderBIM og hvordan det startede. 2019, 83 linjer kode export af blender meshes til ifc. 
-				Thomas havde skrevet en importer. Komprimeringsmaskiner. Bliver udviklet på aktivt siden 2020, næsten 100 contributers til koden.
-				Komplet re-write så alt geometri er native IFC geometri så vidt muligt (parametriseret) og ikke blender meshes.-->
+			<!-- -->
+			<section>
+				<h2>Blender BIM</h2>
+				<img src="./images/nativebim/blenderbimhistorie2.png" style="vertical-align:right;margin:0px 20px">
+				<ul>
+					<li style="font-size: 0.7em;"><b>Aug 2019:</b> 83 lines of code written to export Blender meshes to
+						IFC</li>
+					<li style="font-size: 0.7em;"><b>Oct 2019:</b> Packaged and released to public</li>
+					<li style="font-size: 0.7em;"><b>Jan 2020:</b> Community user automates visualisation of compactor
+						machines</li>
+					<li style="font-size: 0.7em;"><b>Nov 2020:</b> Swiss army knife of free BIM utilities in production
+						use on commercial projects
+					</li>
+				</ul>
+				<aside class="notes">
+					◼︎ 2019, 83 linjer kode export af blender meshes til ifc.
+					◼︎ Thomas havde skrevet en importer. Komprimeringsmaskiner.
+					◼︎ Bliver udviklet på aktivt siden 2020, over 100 contributers til koden.
+					◼︎ Komplet re-write så alt geometri er native IFC geometri så vidt muligt (parametriseret) og ikke
+					blender meshes.
+
+				</aside>
+			</section>
 			<section>
 				<h2>Blender BIM</h2>
 				<img src="./images/nativebim/underthehood.png" style="vertical-align:middle;margin:0px 20px">
+				<aside class="notes">
+					◼︎ Alt IFC funktionalitet kommer fra IfcOpenShell
+					◼︎ IfcOpenShell er meget tro mod IFC, afviger ikke rigtig fra det men tilføjer mange flere
+					funktioner
+					◼︎ BlenderBIM er langt hen af vejen et UI til IfcOpenShell
+					◼︎ BlenderBIM's geometri er adskilt fra Blender -> to filer (IFC og Blender)
+
+				</aside>
 			</section>
 			<section data-background-iframe="https://ifcopenshell.org/" data-background-interactive>
 			</section>
 			<section data-background-iframe="https://blenderbim.org/" data-background-interactive>
+				<aside class="notes">
+					◼︎ dokumentation, tutorials
+
+				</aside>
 			</section>
 			<section>Lad os kigge på det i praksis...</section>
 			<section>
