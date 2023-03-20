@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Intro til NativeIFC og BlenderBIM</title>
+
+	<meta name="author" content="Martina Jakubowska">
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-auto-animate>
+				<h2>F23 - 41927</h2>
+				<h3>Klassifikationssystemer i IFC og Blender BIM</h3>
+				<p>
+					<small>Martina Jakubowska</small>
+				</p>
+				<aside class="notes">
+
+
+				</aside>
+			</section>
+
+			<section data-auto-animate>
+				<h3><span style="color:rgba(197, 55, 55)">Klassifikation</span> vs <span
+						style="color:rgba(197, 55, 55)">Identifikation</span></h3>
+				<span class="attributionthree" style="color:cadetblue; font-variant: small-caps">
+					Mere info om klassifikation og identifikation kan findes <a
+						href="https://anvisninger.molio.dk/gratis-vaerktojer/ccs%20eksempelsamlinger/ccs%20eksempelsamling%20konstruktioner/01%20forord">her</a></span>
+			</section>
+			<section data-auto-animate>
+				<h3><span style="color:rgba(197, 55, 55, 0.705)">Klassifikation</span></h3>
+				<blockquote>
+					<b>Klassifikation</b> anvendes til at kategorisere bygningsdele, bygværker, rum og materiel ud fra
+					nogle
+					fastlagte kriterier. Fx klassifikation for vinduer, søjler, døre, ventilationsaggregater,
+					belysningsarmaturer osv.
+				</blockquote>
+				<span class="attribution" style="color:cadetblue; font-variant: small-caps">
+					<a
+						href="https://bygst.dk/byggeri/ikt/vejledning-til-ikt-ydelser-og-implementering/klassifikation-og-identifikation/">-
+						Bygningsstyrelsen</a></span>
+
+				<aside class="notes">
+					Molio (og andre, f.eks. bygningsstyrelsen
+					https://bygst.dk/byggeri/ikt/vejledning-til-ikt-ydelser-og-implementering/klassifikation-og-identifikation/
+					) skelner mellem "klassifikation" og "identifikation".
+				</aside>
+			</section>
+
+			<section data-auto-animate>
+				<h3><span style="color:rgba(197, 55, 55, 0.705)">Klassifikation</span></h3>
+				<p style="text-align:left;">
+					➡ Ordning af objekter i klasser
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ En klasse definerer fælles egenskaber for dens objekter
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ En klasse definerer fælles egenskaber for dens objekter
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Klassifikation siger ikke noget om hvilket objekt der omtales eller hvor det er placeret.
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Klasser er kodet ved anvendelse af bogstaver.
+				</p>
+			</section>
+
+			<section data-auto-animate>
+				<h3><span style="color:rgba(197, 55, 55, 0.705)">Identifikation</span></h3>
+				<blockquote>
+					Identifikation identificerer enkelte forekomster og/eller typer af bygningsdele. En forekomst er fx
+					ét bestemt vindue placeret i en facade, hvorimod typer er flere vinduer, der deler egenskaber og
+					derfor kan identificeres som samme type.
+				</blockquote>
+				<span class="attribution" style="color:cadetblue; font-variant: small-caps">
+					<a
+						href="https://bygst.dk/byggeri/ikt/vejledning-til-ikt-ydelser-og-implementering/klassifikation-og-identifikation/">-
+						Bygningsstyrelsen</a></span>
+			</section>
+
+			<section data-auto-animate>
+				<h3><span style="color:rgba(197, 55, 55, 0.705)">Identifikation</span></h3>
+				<p style="text-align:left;">
+					➡ Identificer enkelte objekter eller typer ved at give dem et nummer.
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Ethvert objekt kan tildeles ID for: type, produkt, placering og funktion.
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Har typisk kun koder for bygningsdele, men ikke abstrakte elementer som rum, materialer, systemer
+					osv.
+				</p>
+			</section>
+			<section data-auto-animate>
+				<h3 style="text-align:left;"><span style="color:rgba(197, 55, 55, 0.705)">Identifikation</span></h3>
+				<p style="text-align:left;">
+					➡ Cuneco Classification System (CCS)
+				</p>
+				<p style="text-align:left;" class="fragment grow">
+					➡ BIM7AA
+				</p>
+				<h3 style="text-align:left;"><span style="color:rgba(197, 55, 55, 0.705)">Klassifikation</span></h3>
+				<p style="text-align:left;" class="fragment grow">
+					➡ Cuneco Classification System (CCS)
+				</p>
+				<p style="text-align:left;">
+					➡ SfB
+				</p>
+
+				<aside class="notes">
+					Og BIM7AA er egentlig kun et
+					identifikationssystem, men der er nogle der også bruger det til klassifikation. De skriver selv at
+					det kan/bør kombineres med andre
+					systemer som CCS.
+					Nogle andre klassifikationssystemer (som Uniclass) klassificerer også materialer og andre ting.
+				</aside>
+			</section>
+
+			<section data-background-iframe="https://ccs.molio.dk/Navigate/CodeCracker" data-background-interactive>
+			</section>
+
+
+			<section data-auto-animate>
+				<h3>To måder at arbejde med klassifikationer på</h3>
+				<p style="text-align:left;">
+					➡ IfcClassification
+				</p>
+				<p style="text-align:left;">
+					➡ Custom Egenskabssæt
+				</p>
+			</section>
+
+			<section data-auto-animate>
+				<h3> <span style="text-transform: capitalize">IfcClassification </span></h3>
+				<p style="text-align:left;">
+					➡ Organiseret i hierarkisk træstruktur
+				</p>
+				<p style="text-align:left;">
+					➡ Klassifikationen er en ekstern kilde (en del af IfcExternalInformation)
+				</p>
+				<p style="text-align:left;">
+					➡ Kommer enten i XML eller IFC (STEP) format
+				</p>
+				<aside class="notes">
+					IfcClassificationReference vs IfcClassification?
+					external recourse
+				</aside>
+			</section>
+
+			<section data-auto-animate>
+				<h3> <span style="text-transform: capitalize">IfcClassification </span></h3>
+				<pre><code data-trim data-noescape data-line-numbers="1-16|1-7|8-10|11-16" style="font-size: 80%">ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('ViewDefinition [CoordinationView]'),'2;1');
+FILE_NAME('','2020-04-23T18:09:29',(),(),'IfcOpenShell 0.6.0b0','IfcOpenShell 0.6.0b0','');
+FILE_SCHEMA(('IFC4'));
+ENDSEC;
+DATA;
+#1=IFCPROJECTLIBRARY($,$,'CCS',$,$,$,$,$,$);
+#2=IFCCLASSIFICATION('Molio','R1 (Dansk udgave)','2017-06-21','CCS',$,'http://ccs.bips.dk/News/CCS_Vaerktoejer',$);
+#3=IFCRELASSOCIATESCLASSIFICATION('16Vg7v96zBfeP3BuNvWizJ',$,$,$,(#1),#2);
+#4=IFCCLASSIFICATIONREFERENCE($,'Bygv\X2\00E6\X0\rksanvendelse',$,#2,'Tildeler klassifikation af funktion til IFC Building og IFC Site baseret p\X2\00E5\X0\ CCS (R0) specifikationen.',$);
+#5=IFCCLASSIFICATIONREFERENCE($,'[E]A??','Bygning til menneskeligt behov og virke',#4,$,$);
+#6=IFCCLASSIFICATIONREFERENCE($,'[E]AA?','Beboelsesbygning',#5,$,$);
+#7=IFCCLASSIFICATIONREFERENCE($,'[E]AAA','Enfamilieshus',#6,$,$);
+#8=IFCCLASSIFICATIONREFERENCE($,'[E]AAB','Flerfamilieshus',#6,$,$);
+#9=IFCCLASSIFICATIONREFERENCE($,'[E]AAC','Boligkompleks',#6,$,$);
+				</code></pre>
+			</section>
+			<section data-auto-animate>
+				<h3> <span style="text-transform: capitalize">Custom Egenskabssæt (Psets) </span></h3>
+				<img src="./images/nativebim/bim7aa_kodningsprincip.png" alt="something" border='0'
+					style="vertical-align:right;">
+
+				<aside class="notes">
+					BIM7AA har ikke udgivet klassifikationsfiler. Jeg vil anbefale at bruge BIM typekodning kun til at
+					identificere typer.
+				</aside>
+			</section>
+
+			<section>
+				<span style="font-size: 70%;"><b>BIMTypeID</b> består af to tal: <mark
+						style="background: #ADCCFFA6;">BIMTypeCode</mark> + <mark
+						style="background: #BBFABBA6;">BIMTypeNumber</mark>, fx <mark
+						style="background: #ADCCFFA6;">523</mark><mark style="background: #BBFABBA6;">001</mark></span>
+
+				<br><br>
+				<span style="font-size: 70%; text-align: justify;"><mark
+						style="background: #ADCCFFA6;">BIMTypeCode</mark>
+					er en egenskab/reference, som angives i BIM-projektet. Består altid af
+					tre cifre defineret i strukturen under de enkelte kategorier – fx 523. Skaber
+					den grundlæggende sammenhæng.</span>
+				<br><br>
+				<span style="font-size: 70%; text-align: justify;">
+					<mark style="background: #BBFABBA6;">BIMTypeNumber</mark>
+					er et løbenummer til BIMTypeCode. Det er et unikt bygningsdelstypenummer under den
+					pågældende typekodningsgruppe – antal cifre afhænger af fagdisciplin.
+				</span>
+
+			</section>
+			<section data-auto-animate>
+				<h3>Generelt</h3>
+				<p style="text-align:left;">
+					➡ Nemmest at implementere BIM7AA og CCS på typeniveau
+				</p>
+				<p style="text-align:left;" class="fragment">
+					➡ Lav en custom Property Set Template (en del af IfcProjectLibrary) til BIM7AA koderne. <br> <span
+						style="color:rgba(197, 55, 55)">OBS! Pas på når I opdaterer BlenderBIM, kopier jeres
+						template først!</span>
+				</p>
+				<p style="text-align:left;" class="fragment">
+					➡ I denne omgang skal I kun klassificere bygningsdele.
+				</p>
+				<p style="text-align:left;" class="fragment">
+					➡ <span style="color:rgba(197, 55, 55)">Påmindelse</span>: Vi arbejder kun med IFC filer. Lad vær
+					med at gemme noget i Blender filer!
+				</p>
+				<aside class="notes">
+					Påmindelse: Vi arbejder kun med IFC filen og vi kommer ikke til at tage imod blender filer.
+					Problemer når man gemmer begge - risiko for at man mister data.
+				</aside>
+			</section>
+
+
+			<section>Lad os kigge på det i praksis...</section>
+			<section>
+				<h3>I BlenderBIM:</h3>
+				<p style="text-align:left;">❏ IfcClasification</p>
+				<p style="text-align:left;">❏ Custom Property Set Template</p>
+				<aside class="notes">
+					aktiv classification library
+					placering af template: /Users/martina/Library/Application
+					Support/Blender/3.4/scripts/addons/blenderbim/bim/data/pset/
+					data type
+					type level vs object level
+					gemme filen
+				</aside>
+			</section>
+		</div>
+
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			controls: true,
+			progress: true,
+			center: true,
+			transition: 'fade',
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+		Reveal.configure({ controls: true });
+	</script>
+</body>
+
+</html>
