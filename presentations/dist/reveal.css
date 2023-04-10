@@ -1230,6 +1230,15 @@ html.reveal-full-page {
 
 }
 
+.reveal .imagetext {
+    position: absolute;
+    bottom: 0px !important;
+    right: 0px !important;
+    font-size: 0.25em;
+
+
+}
+
 .reveal .slide-background[data-background-size=contain] video {
     object-fit: contain
 }

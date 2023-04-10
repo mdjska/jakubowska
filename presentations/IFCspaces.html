@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Intro til NativeIFC og BlenderBIM</title>
+
+	<meta name="author" content="Martina Jakubowska">
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-auto-animate>
+				<h2>F23 - 41927</h2>
+				<h3>Rum og Zoner i IFC og Blender BIM</h3>
+				<p>
+					<small>Martina Jakubowska</small>
+				</p>
+			</section>
+
+			<section data-auto-animate>
+				<h3>Spatial Tree</h3>
+
+				<img src="./images/nativebim/Ifc-spatial-tree.png" alt="something" border='0' height='400'
+					style="vertical-align:right;">
+
+				<span class="imagetext" style="font-variant: small-caps; text-justify: left;">
+					An example spatial tree. Orange classes belong to IFC context, blue classes belong
+					to `IfcSpatialElement`, and green classes belong to `IfcElement`. Blue arrows represent
+					an <b>aggregation</b> (or <b>spatial (de)composition</b>) relationship, and green arrows represent
+					a <b>spatial containment</b> relationship.</span>
+				<aside class="notes">
+					An example spatial tree. Orange classes belong to IFC context, blue classes belong
+					to `IfcSpatialElement`, and green classes belong to `IfcElement`. Blue arrows represent
+					an _aggregation_ (or _spatial (de)composition_) relationship, and green arrows represent a _spatial
+					containment_ relationship.
+				</aside>
+			</section>
+
+			<section data-auto-animate>
+				<h3>Spatial Tree</h3>
+
+				<img src="./images/nativebim/ifcspatialelement_edited.png" alt="something" border='0' height='250'
+					style="vertical-align:right;">
+
+				<aside class="notes">
+					An example spatial tree. Orange classes belong to IFC context, blue classes belong
+					to `IfcSpatialElement`, and green classes belong to `IfcElement`. Blue arrows represent
+					an _aggregation_ (or _spatial (de)composition_) relationship, and green arrows represent a _spatial
+					containment_ relationship.
+				</aside>
+			</section>
+
+
+
+			<section data-auto-animate>
+				<h3>Spatial Tree</h3>
+
+				<img src="./images/nativebim/ifcspatialelement_edited_marked.png" alt="something" border='0'
+					height='250' style="vertical-align:right;">
+
+				<aside class="notes">
+					Vi kommer til at arbejde med IfcSpaces = rum og IfcSpatialZones = zoner.
+				</aside>
+			</section>
+
+			<section data-auto-animate>
+				<h3>Spatial Tree</h3>
+
+				<img src="./images/nativebim/ifcspatialelement_edited_w_zone.png" alt="something" border='0'
+					height='340' style="vertical-align:right;">
+
+				<aside class="notes">
+					Zone structures may not be hierarchical, i.e. one
+					individual IfcSpace may be associated with zero, one, or
+					several IfcZones. For example, a zone might be used to represent an apartment as a group of spaces.
+					The IfcSpatialZone is different to the IfcZone entity by allowing an own placement and shape
+					representation, whereas IfcZone is only a grouping of IfcSpace's.
+				</aside>
+			</section>
+
+			<section data-auto-animate>
+				<h3><span style="text-transform: capitalize; color:rgba(197, 55, 55)">IfcSpace</span></h3>
+				<blockquote>
+					A <b>space</b> represents an area or volume bounded actually or theoretically. Spaces are areas or
+					volumes
+					that provide for certain functions within a building, like a room.
+				</blockquote>
+
+				<aside class="notes">
+
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h3><span style="text-transform: capitalize; color:rgba(197, 55, 55)">IfcSpace</span></h3>
+
+				<p style="text-align:left;">
+					➡ IfcSpaces er hierarkiske, derfor skal de knyttes til et IfcBuildingStorey.
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Kan også organiseres i grupper (IfcZones) og som delrum (partial space)
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Kan bruges til at beskrive reglementkrav, som brand, termisk, belysning osv. Se mere <a
+						href="https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcSpace.htm#5.4.3.64.5-Property-sets">her</a>.
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ I IFC er spaces altid defineret af indvendige vægflader. Se mere <a
+						href="https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcRelSpaceBoundary.htm">her</a>.
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Se mere om hvordan IfcSpace højder defineres <a
+						href="https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcSpace.htm">her</a>.
+				</p>
+				<aside class="notes">
+
+				</aside>
+			</section>
+
+			<section data-auto-animate>
+				<h3><span style="text-transform: capitalize; color:rgba(197, 55, 55)">IfcSpatialZone</span></h3>
+
+				<p style="text-align:left;">
+					➡ IfcSpatialZones er ikke hierarkiske.
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Kan overlappe hinanden eller IfcSpaces.
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ I modsætning til IfcZones, kan have sin egen geometri og placering (men behøver ikke).
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Har prædefinerede typer som CONSTRUCTION, FIRESAFETY, LIGHTING, OCCUPANCY, THERMAL osv. Se mere <a
+						href="https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcSpatialZoneTypeEnum.htm#5.4.2.23.2-Type-values">her</a>.
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Prædefinerede typer bestemmer hvilke egenskabssæt er tilgængelige.
+				</p>
+				<aside class="notes">
+
+				</aside>
+			</section>
+
+
+			<section data-auto-animate>
+				<h5><span
+						style="text-transform: capitalize;  font-family:'Courier new', monospace; font-weight:normal; ">
+						IfcSpace
+					</span> og <span
+						style="text-transform: capitalize;  font-family:'Courier new', monospace; font-weight:normal; ">
+						IfcSpatialZone
+					</span> attributer</h5>
+				<br>
+				<table style="font-size: medium;">
+					<tr>
+						<td><b>Attribute</b></td>
+						<td><b>Description</b></td>
+					</tr>
+					<tr>
+						<td><span style="font-family: monospace;background-color:rgb(231, 231, 231); padding: 1px">
+								Name
+							</span></td>
+						<td>A number or designator provided by the user or system for the spatial element.</td>
+					</tr>
+					<tr>
+						<td><span style="font-family: monospace;background-color:rgb(231, 231, 231); padding: 1px">
+								LongName
+							</span></td>
+						<td>Name of the spatial element provided by the user.</td>
+					</tr>
+					<tr>
+						<td><span style="font-family: monospace;background-color:rgb(231, 231, 231); padding: 1px">
+								Description
+							</span></td>
+						<td>Any additional description provided by the user.</td>
+					</tr>
+					<tr>
+						<td><span style="font-family: monospace;background-color:rgb(231, 231, 231); padding: 1px">
+								ObjectType
+							</span></td>
+						<td>reserved for typing of spatial elements in case of PredefinedType = .USERDEFINED.</td>
+					</tr>
+				</table>
+				<br>
+				<p class="fragment fade-right" style="font-size: 16pt;"><mark
+						style="background: #BBFABBA6;">EXAMPLE</mark>: A Name could be
+					"1-003", LongName may be "Office", and Description may be
+					"Corner office with habour view".</p>
+			</section>
+			<section>Lad os kigge på det i praksis...</section>
+			<section>
+				<h3>I BlenderBIM:</h3>
+				<p style="text-align:left;">❏ IfcSpace direkte og gennem type</p>
+				<p style="text-align:left;">❏ IfcSpatialZones direkte</p>
+
+			</section>
+		</div>
+
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			controls: true,
+			progress: true,
+			center: true,
+			transition: 'fade',
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+		Reveal.configure({ controls: true });
+	</script>
+</body>
+
+</html>
