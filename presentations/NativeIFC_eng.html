@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Introduction to Native IFC</title>
+
+	<meta name="author" content="Martina Jakubowska">
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2>E23 - 41934</h2>
+				<h3>Introduction to Native IFC</h3>
+				<p>
+					<small>Martina Jakubowska</small>
+				</p>
+				<span class="attributionthree" style="color:cadetblue; font-variant: small-caps">
+					Inspired by <a href="https://www.youtube.com/watch?v=h2Rv9iu7yDk&t=198s">"Introduction to OpenBIM,
+						Native IFC, and Open Source AEC"</a>, Dion Moult</a></span>
+				<aside class="notes">
+					◼︎ I recommend Dion's presentation, goes deeper into OpenBIM and IFC.
+				</aside>
+			</section>
+
+			<section>
+				<h3>What is the <span style="color:rgb(197, 55, 55)">problem</span>?</h3>
+			</section>
+			<section data-auto-animate>
+				<h3>BIM data is very <span style="color:rgb(197, 55, 55)">unstructured</span>.</h3>
+			</section>
+			<section data-auto-animate>
+				<h3 style="color:darkgray;">BIM data is very <span
+						style="color:rgba(197, 55, 55, 0.705)">unstructured</span>.</h3>
+
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Revit wall data model ≠ ArchiCAD wall data model
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Data transfer between programs depends on "translation."
+				</p>
+				<p class="fragment fade-in-then-out"><img src="./images/nativebim/mappingtable.png" alt="something"
+						border='0' height='400' style="vertical-align:right;"><br>
+					<span class="attributionto" style="color:cadetblue; font-variant: small-caps; bottom:10%">
+						GRAPHISOFT | ArchiCAD 18 Help</span>
+				</p>
+
+				<aside class="notes">
+					◼︎ Revit wall data model ≠ ArchiCAD
+					◼︎ We can't easily transfer a wall from one program to another.
+					◼︎ There's a lot of translation happening under the surface.
+					◼︎ Similar to matching tables in classification systems.
+					◼︎ Impacts data quality significantly.
+					◼︎ Many different ways to define a wall. -> We're fighting over which definition is the best one.
+					◼︎ Current BIM often no better than a spreadsheet.
+				</aside>
+
+			</section>
+			<section data-auto-animate>
+				<h3 style="color:darkgray;">BIM data is very <span
+						style="color:rgba(197, 55, 55, 0.705)">unstructured</span>.</h3>
+
+				<p style="text-align:left;">
+					➡ Revit wall data model ≠ ArchiCAD wall data model
+				</p>
+				<p style="text-align:left;">
+					➡ Data transfer between programs depends on "translation."
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ It affects data quality.
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ A lot of time is spent discussing the best "definition" for a wall.
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Current BIM is often no better than a spreadsheet...
+				</p>
+				<aside class="notes">
+					◼︎ Revit wall data model ≠ ArchiCAD
+					◼︎ We can't easily transfer a wall from one program to another.
+					◼︎ There's a lot of translation happening under the surface.
+					◼︎ Similar to matching tables in classification systems.
+					◼︎ Impacts data quality significantly.
+					◼︎ Many different ways to define a wall.
+					◼︎ Current BIM often no better than a spreadsheet.
+				</aside>
+
+			</section>
+			<section data-auto-animate>
+				<h3 style="color:darkgray;">BIM data is very <span
+						style="color:rgba(197, 55, 55, 0.705)">unstructured</span>.</h3>
+
+				<p style="text-align:left;">
+					With a spreadsheet, everyone will at least be able to:
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Have access to it
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ See and read how, for example, a wall is defined.
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Define and expand the data structure as needed.
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ Connect third-party programs, write scripts, expand and improve it.
+				</p>
+				<p style="text-align:left;" class="fragment fade-right">
+					➡ A spreadsheet doesn't expire and doesn't require licenses.
+				</p>
+				<aside class="notes">
+					Instead, all these aspects today are defined not by the users but by the software vendors.
+				</aside>
+
+			</section>
+			<section data-auto-animate>
+				<h3>Solution: <span style="color:rgb(197, 55, 55)">Open data
+						standards</span>.</h3>
+
+			</section>
+			<section data-auto-animate>
+				<h3>Solution: <span style="color:rgb(197, 55, 55)">Open data
+						standards</span>.</h3>
+
+				<br>
+				<blockquote style="font-size:0.8em;">An open data standard is a set of specifications (or
+					requirements) for how some sets of data should be made publicly available. [...] <br>
+					Open data standards are generally developed “in the open”, meaning that anyone who is interested has
+					a way to
+					contribute.</blockquote> <br> <br>
+				<span class="attribution" style="color:cadetblue; font-variant: small-caps">
+					OPEN DATA DIRECTORY (<a
+						href="datastandards.directory/glossary">datastandards.directory/glossary</a>), <a
+						href="data.europa.eu">data.europa.eu</a></span>
+			</section>
+			<section data-auto-animate>
+				<h3>Solution: <span style="color:rgb(197, 55, 55)">Open data
+						standards</span>.</h3>
+
+				Three main types of open data standards:
+				<br>
+				<ul>
+					<li style="text-align:left; font-size:0.8em" class="fragment fade-right"><strong>Schematic</strong>:
+						Defines
+						structure of the
+						data to be published. This includes the names, descriptions, and data types of data fields or
+						columns.</li>
+					<li style="text-align:left;font-size:0.8em" class="fragment fade-right"><strong>Semantic</strong>:
+						Defines the
+						terminology or language in the data which is published. E.g. define the terms "Arson" and
+						"Robbery"</li>
+					<li style="text-align:left;font-size:0.8em" class="fragment fade-right"><strong>Atomic</strong>:
+						Defines how basic
+						elements of data must be represented. E.g., a date and time should be formatted as
+						“2017-01-01T13:00:00Z” <span class="attribution"
+							style="color:cadetblue; font-variant: small-caps">
+							OPEN DATA DIRECTORY (<a
+								href="datastandards.directory/glossary">datastandards.directory/glossary</a>)</span>
+					</li>
+				</ul>
+
+			</section>
+			<section data-auto-animate>
+				<h2>Open data standards applied in BIM → <span style="color:rgb(197, 55, 55)">Open BIM</span>.</h2>
+			</section>
+			<section data-auto-animate>
+				<h3>Examples of <span style="color:rgb(197, 55, 55)">Open BIM</span> standards</h3>
+				<ul style="font-size: 0.8em;">
+					<li class="fragment">IFC (Industry Foundation Classes)</li>
+					<li class="fragment">BCF (BIM Collaboration Format)</li>
+					<li class="fragment">IDS (Information Delivery Specification)</li>
+					<li class="fragment">MicroMVD (Micro Model View Definition)</li>
+					<span class="fragment">
+						<li>BSDD (buildingSMART Data Dictionary)</li>
+						<li>COBie (Construction-Operations Building information exchange)</li>
+						<li>BrickSchema</li>
+						<li>BHoM</li>
+						<li>dotbim</li>
+						<li>GbXML</li>
+						<li>...</li>
+					</span>
+
+				</ul>
+				<aside class="notes">
+					We will focus on IFC.
+				</aside>
+
+			</section>
+			<section>
+				<blockquote>
+					IFC is a standardized, digital description of the built
+					environment. It is an <span style="color:rgb(197, 55, 55)">open, international standard
+						(ISO 16739-1:2018)</span>, meant to be vendor-neutral, or agnostic, and usable across a wide
+					range of
+					hardware devices, software platforms, and interfaces for many different use cases.
+				</blockquote>
+				<aside class="notes">
+					◼︎ Definition of IFC taken from BuildingSMART's website.
+					◼︎ Important to note that IFC is an open standard.
+				</aside>
+			</section>
+			<section>
+				OpenBIM is about <span style="color:rgb(197, 55, 55)">freedom of data</span>.
+				<br>
+				OpenSource is about <span style="color:rgb(197, 55, 55)">freedom of
+					users</span>.
+			</section>
+			<section>
+				<h4>The <span style="color:rgb(197, 55, 55)">four freedoms</span> of free software*</h4>
+				<img src="./images/nativebim/fourfreedoms.png">
+				<span class="attribution" style="color:cadetblue; font-variant: small-caps">
+					Free Software Foundation Europe (<a
+						href="fsfe.org/freesoftware/freesoftware.en.html">fsfe.org/freesoftware/freesoftware.en.html</a>)
+					<br>
+					* Note: Free software doesn't necessarily mean free of cost!</span>
+			</section>
+			<section data-background-iframe="https://opendefinition.org/" data-background-interactive>
+				<aside class="notes">
+					◼︎ The definition of free software closely aligns with the "Open Definition" used by the EU
+					in their work with public data and open standards.
+				</aside>
+			</section>
+			<section>
+				<h4><span style="color:rgb(197, 55, 55)">Translated</span> OpenBIM vs <span
+						style="color:rgb(197, 55, 55)">Native</span> OpenBIM</h4>
+			</section>
+			<section>
+				<h4><span style="color:rgb(197, 55, 55)">Translated OpenBIM</span> still presents many of the same
+					problems...</h4>
+				<img src="./images/nativebim/traditionalvstranslated_eng.png">
+			</section>
+			<section>
+				<h2>Native OpenBIM</h2>
+				<br>
+				<img src="./images/nativebim/blenderbimlogo.png" alt="" border='0' height='70'
+					style="vertical-align:middle;margin:0px 20px">
+				<img src="./images/nativebim/ifcjslogo.png" alt="" border='0' height='70'
+					style="vertical-align:middle;margin:0px 20px">
+				<img src="./images/nativebim/ifcopenshelllogo.png" alt="" border='0' height='70'
+					style="vertical-align:middle;margin:0px 20px">
+				<img src="./images/nativebim/freecadlogo.png" alt="" border='0' height='70'
+					style="vertical-align:middle;margin:0px 20px">
+				<img src="./images/nativebim/xbimlogo.png" alt="" border='0' height='70'
+					style="vertical-align:middle;margin:0px 20px">
+				<br>
+				<img src="./images/nativebim/ifclogo.png" alt="" border='0' height='70'
+					style="vertical-align:middle;margin:50px 20px">
+				<aside class="notes">
+					◼︎ Native OpenBIM or NativeIFC refers to programs that have IFC as their fundamental
+					data model.
+					◼︎ No exporting, importing, or translating of data. We model directly in IFC.
+					◼︎ We will focus on BlenderBIM.
+				</aside>
+			</section>
+			<!-- -->
+			<section>
+				<h2>Blender BIM</h2>
+				<img src="./images/nativebim/blenderbimhistorie2.png" style="vertical-align:right;margin:0px 20px">
+				<ul>
+					<li style="font-size: 0.7em;"><b>Aug 2019:</b> 83 lines of code written to export Blender meshes to
+						IFC</li>
+					<li style="font-size: 0.7em;"><b>Oct 2019:</b> Packaged and released to the public</li>
+					<li style="font-size: 0.7em;"><b>Jan 2020:</b> Community user automates visualization of compactor
+						machines</li>
+					<li style="font-size: 0.7em;"><b>Nov 2020:</b> Swiss army knife of free BIM utilities in production
+						use on commercial projects
+					</li>
+				</ul>
+				<aside class="notes">
+					◼︎ 2019, 83 lines of code to export Blender meshes to IFC.
+					◼︎ Thomas had written an importer. Compactor machines.
+					◼︎ Actively developed since 2020, over 100 contributors to the code.
+					◼︎ Complete re-write so all geometry is native IFC geometry to the extent possible (parametric) and
+					not
+					Blender meshes.
+
+				</aside>
+			</section>
+			<section>
+				<h2>Blender BIM</h2>
+				<img src="./images/nativebim/underthehood.png" style="vertical-align:middle;margin:0px 20px">
+				<aside class="notes">
+					◼︎ All IFC functionality comes from IfcOpenShell.
+					◼︎ IfcOpenShell closely follows IFC, doesn't deviate much from it, but adds many more
+					features.
+					◼︎ BlenderBIM is largely a UI for IfcOpenShell.
+					◼︎ BlenderBIM's geometry is separated from Blender -> two files (IFC and Blender).
+
+				</aside>
+			</section>
+			<section data-background-iframe="https://ifcopenshell.org/" data-background-interactive>
+			</section>
+			<section data-background-iframe="https://blenderbim.org/" data-background-interactive>
+				<aside class="notes">
+					◼︎ Documentation, tutorials.
+
+				</aside>
+			</section>
+		</div>
+
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			controls: true,
+			progress: true,
+			center: true,
+			transition: 'fade',
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+		Reveal.configure({ controls: true });
+	</script>
+</body>
+
+</html>
