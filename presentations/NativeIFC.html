@@ -21,11 +21,14 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<h2>F23 - 41927</h2>
-				<h3>Intro til Native IFC og Blender BIM</h3>
+				<h2>F25 - 41927</h2>
+				<h3>Intro til Native IFC og BonsaiBIM</h3>
+				<!--
+				
 				<p>
 					<small>Martina Jakubowska</small>
 				</p>
+				-->
 				<span class="attributionthree" style="color:cadetblue; font-variant: small-caps">
 					Inspireret af <a href="https://www.youtube.com/watch?v=h2Rv9iu7yDk&t=198s">"Introduction to OpenBIM,
 						Native IFC, and Open Source AEC"</a>, Dion Moult</a></span>
@@ -65,7 +68,7 @@
 					◼︎ går meget ud over data kvaliteten.
 					◼︎ mange forskellige måder at definere en væg
 					på -> vi skændes over hvilken definition er den bedste
-					◼︎ nuværende BIM oftest ikke bedre end et spreadsheet.
+					◼︎ nuværende BIM oftest ikke bedre end et regneark...
 
 				</aside>
 
@@ -97,7 +100,7 @@
 					◼︎ går meget ud over data kvaliteten.
 					◼︎ mange forskellige måder at definere en væg
 					på -> vi skændes over hvilken definition er den bedste
-					◼︎ nuværende BIM oftest ikke bedre end et spreadsheet.
+					◼︎ nuværende BIM oftest ikke bedre end et regneark...
 				</aside>
 
 			</section>
@@ -264,12 +267,15 @@
 					◼︎ Native OpenBIM eller NativeIFC er et udtryk for programmer der har IFC som deres grundlæggende
 					datamodel.
 					◼︎ Dvs. ingen export, import eller oversættelse af data. Vi modellerer direkte i IFC.
-					◼︎ Vi kommer til at fokusere på BlenderBIM
+					◼︎ Vi kommer til at fokusere på BonsaiBIM
 				</aside>
 			</section>
-			<!-- -->
+			<!--<span
+					style="color:rgba(197, 55, 55, 0.705)">ustruktureret</span> -->
 			<section>
-				<h2>Blender BIM</h2>
+				<h2>BonsaiBIM</h2>
+				<h4 style="color:darkgray; font-style: italic; font-size: larger;">(tidl. BlenderBIM) </h4>
+				<h6><em></em></h6>
 				<img src="./images/nativebim/blenderbimhistorie2.png" style="vertical-align:right;margin:0px 20px">
 				<ul>
 					<li style="font-size: 0.7em;"><b>Aug 2019:</b> 83 lines of code written to export Blender meshes to
@@ -277,9 +283,13 @@
 					<li style="font-size: 0.7em;"><b>Oct 2019:</b> Packaged and released to public</li>
 					<li style="font-size: 0.7em;"><b>Jan 2020:</b> Community user automates visualisation of compactor
 						machines</li>
+					<li style="font-size: 0.7em;"><b>Dec 2022:</b> Hired first part-time developer</li>
+					<li style="font-size: 0.7em;"><b>Aug 2024:</b> Changed name to BonsaiBIM</li>
+					<!--
 					<li style="font-size: 0.7em;"><b>Nov 2020:</b> Swiss army knife of free BIM utilities in production
 						use on commercial projects
 					</li>
+					-->
 				</ul>
 				<aside class="notes">
 					◼︎ 2019, 83 linjer kode export af blender meshes til ifc.
@@ -291,7 +301,7 @@
 				</aside>
 			</section>
 			<section>
-				<h2>Blender BIM</h2>
+				<h2>BonsaiBIM</h2>
 				<img src="./images/nativebim/underthehood.png" style="vertical-align:middle;margin:0px 20px">
 				<aside class="notes">
 					◼︎ Alt IFC funktionalitet kommer fra IfcOpenShell
@@ -304,7 +314,7 @@
 			</section>
 			<section data-background-iframe="https://ifcopenshell.org/" data-background-interactive>
 			</section>
-			<section data-background-iframe="https://blenderbim.org/" data-background-interactive>
+			<section data-background-iframe="https://bonsaibim.org/" data-background-interactive>
 				<aside class="notes">
 					◼︎ dokumentation, tutorials
 
@@ -315,27 +325,28 @@
 				<h3>I Blender:</h3>
 
 				<p style="text-align:left;">❏ Forskellige vinduer og panels (interface)</p>
-				<p style="text-align:left;">❏ Sæt custom layout og gem den</p>
+				<!--<p style="text-align:left;">❏ Sæt custom layout og gem den</p>-->
 				<p style="text-align:left;">❏ Emulate Numpad</p>
-				<p style="text-align:left;">❏ Basis shortcuts: G (GX, GY, GX), R (RX, RY, RZ), S (SX, SY, SZ),
-					shift-RMB, sæt View, shift-D, alt-Z<br>
+				<p style="text-align:left;">❏ Basis shortcuts: G (GX, GY, GX), R (RX, RY, RZ), S (SX, SY, SZ), Frame selected, shift-D, alt-Z<br>
 					<span style="color:rgb(197, 55, 55)">&emsp;Obs! Hotkeys er kontekstsensitive!</span>
 				</p>
 				<p style="text-align:left;">❏ Snap Menu</p>
 				<p style="text-align:left;">❏ Object Mode/Edit Mode</p>
 			</section>
 			<section>
-				<h3>I BlenderBIM:</h3>
+				<h3>I Bonsai:</h3>
 				<p style="text-align:left;">❏ Interface: Outline, Scene Properties, Object Properties, Material
-					Properties, N-panel</p>
+					Properties</p>
 				<p style="text-align:left;">❏ Forskel på blender fil (.blend) og IFC fil (.ifc)</p>
 				<p style="text-align:left;">❏ BlenderBIM modelling shortcuts: shift-A, shift-E...</p>
 				<p style="text-align:left;">❏ Tooltips og links til online IFC dokumentation</p>
 				<p style="text-align:left;">❏ Ifc Search</p>
 
 			</section>
+			<!--
+			
 			<section>
-				<h3>BlenderBIM Demo:</h3>
+				<h3>Bonsai Demo:</h3>
 				<p style="text-align:left;">❏ Blender Mesh til IFC element (væg)</p>
 				<p style="text-align:left;">❏ Property Sets og Quantity Sets</p>
 				<p style="text-align:left;">❏ IfcGrid</p>
@@ -343,9 +354,8 @@
 				<p style="text-align:left;">❏ Custom profiles</p>
 				<p style="text-align:left;">❏ IfcArray</p>
 				<p style="text-align:left;">❏ IfcBuildingStoreys</p>
-
-
 			</section>
+			-->
 		</div>
 
 	</div>
